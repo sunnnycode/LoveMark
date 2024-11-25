@@ -1,0 +1,16 @@
+#popup {}
+#popup > .ec-base-layer {padding-bottom: 30px;}
+#popup h1 {padding: 5px 10px;line-height: 1.4;background: #000;color: #fff;}
+#popup .wrap {padding: 15px 10px;}
+
+#popup .btnStrong {display: inline-block;min-width: 60px;line-height: 30px;border-radius: 0;border: none;text-align: center;font-size: 13px;background: #000;color: #fff;}
+#popup .btnClose {display: block;margin: 0 auto;min-width: 60px;border-radius: 0;border: none;background: #000;color: #fff;line-height: 30px;font-size: 13px;}
+
+
+.xans-search-frompackage .xans-search-boardform fieldset { min-width:130px; }
+.xans-search-frompackage .xans-search-boardform select#search_type { width:100px; border-color: #dedede;}
+.xans-search-frompackage .xans-search-boardform input#keyword { width:100%; margin:0 0 0 4px;border-color: #dedede; }
+
+.xans-search-frompackage .resultArea { overflow:hidden; min-width:306px; margin:7px 0 14px 0; font-size:12px !important; }
+.xans-search-frompackage .resultArea p { padding:7px 0 0; float:left; }
+.xans-search-frompackage .resultArea #limit { float:right; }

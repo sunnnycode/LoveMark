@@ -1,0 +1,131 @@
+
+@charset "utf-8";
+
+/* 회원가입 타이틀 숨김 */
+.progress {display:none;}
+
+/* 로그인 */
+.xans-member-login { margin:14px auto 29px; border-top:0; }
+.xans-member-login .keyboard .btnKey.selected { color:#111; border:none; }
+.xans-member-login .loginWrap .ec-base-tab {margin:0 14px;}
+.xans-member-login .keyboard .btnKey.selected:before { background-image: url("/images/customizing/ico_toggle_arrow_up.png"); }
+.xans-member-findidresult .list { padding:14px; border:1px solid #e1e1e1; border-top:none; background:#fff; }
+.xans-member-findidresult .info { padding:25px 21px 20px; border:1px solid #e1e1e1; text-align:center; background:#fff; }
+
+/* 주문조회 로그인 */
+.xans-myshop-orderhistorynologin .keyboard .btnKey.selected { color:#111; border:none; }
+.xans-myshop-orderhistorynologin .keyboard .btnKey.selected:before { background-image: url("/images/customizing/ico_toggle_arrow_up.png"); }
+.xans-myshop-orderhistorynologin .formBox .form #order_id1 {width:49.3%;}
+.xans-myshop-orderhistorynologin .ec-base-tab {margin:0 14px;}
+
+/* 회원가입 */
+.xans-member-join .ec-base-table table:after {background:#d5d5d5;}
+.xans-member-joincomplete .welcome {border:1px solid #e1e1e1;}
+.xans-member-join .ec-base-tooltip.typeUpper {left:auto !important;bottom:auto !important;}
+
+/* 탭영역 */
+.ec-base-tab ul {border-top:0;border-bottom:0;padding: 0 7px;}
+.ec-base-tab li {border-left:0;min-height:40px;}
+.ec-base-tab li a{font-size: 11px;border-bottom:2px solid #ccc;}
+.ec-base-tab li.selected a { border-left:0; font-weight:bold; color:#111; background:#fff;border-bottom:2px solid #666;}
+
+/* 주문조회 페이지 */
+.xans-myshop-orderhistoryhead a.selected {background-color:#252525;border:1px solid #252525;}
+.xans-myshop-orderhistoryhead fieldset a.btnNormal:hover,
+.xans-myshop-orderhistoryhead fieldset a.btnNormal:active,
+.xans-myshop-orderhistoryhead fieldset a.btnNormal:focus { background-color:#252525; color:#fff; border:1px solid #252525; }
+r,
+.xans-myshop-orderhistoryhead fieldset a.btnBasic:active,
+.xans-myshop-orderhistoryhead fieldset a.btnBasic:focus { background-color:#252525; color:#fff; border:1px solid #252525; }
+
+/* 장바구니 */
+.ec-base-fold.theme1 > .title {background-color:#000;padding: 5px 7px;}
+.ec-base-fold.theme1 > .title h2{font-weight: 400;font-size: 14px;}
+.xans-order-basketpackage .title.subTitle h3 {background-color:#fff;}
+/* .xans-order-basketpackage .totalSummary .total {background-color:#aaa;} */
+.xans-order-basketpackage .totalSummary .title,
+.ec-base-fold.theme2 > .title {background-color:#fff;}
+.buy_info{padding: 0 10px;box-sizing: border-box;color: #252525;}
+
+/* 주문 페이지 */
+#mCafe24Order input:not(:disabled):checked[type="radio"] {background-image:url("/images/customizing/bg_radio_checked.png"); -webkit-appearance:none;}
+#mCafe24Order .payMethod > li.selected > label {background:#eee;border-color:#dedede;}
+#mCafe24Order .payMethod > li.selected > .inner {border:1px solid #e1e1e1;}
+#mCafe24Order .ec-order-button-list .ec-base-label input:checked + .text {border-color:#444;background:#444;}
+#mCafe24Order .ec-base-button.gFull [class*="btn"] {border:1px solid #444;background:#444;height:55px;line-height:55px;}
+#userStyle .titleArea {background-color:#999;}
+#mCafe24Order .totalPay {background:#eee;}
+
+/* 전체 테이블 */
+.ec-base-table { border:1px solid #e1e1e1;}
+
+/* 버튼 */
+.btnSubmit { height:40px; line-height:40px; padding:0 10px; font-size:13px; color:#fff; border:1px solid #444; background:#444; }
+.btnEm { height:40px; line-height:40px; padding:0 10px; font-size:13px; border:1px solid #e1e1e1; background:#fff; }
+.btnStrong { color:#fff; border:1px solid #000; border-bottom-color:#000; background:#000; }
+
+/* 갤러리 게시판 */
+.xans-board-list-8 .thumbType li {margin:0 0 50px;}
+.xans-board-read-8 .content > img:first-child {display:none;}
+
+/* 전체 포인트 색상 */
+.xans-myshop-addrlist .name span,
+.xans-myshop-orderhistoryapplyexchange .status,
+.xans-myshop-orderhistoryapplycancel .status,
+.ec-base-prdInfo .prdFoot,
+.txtEm,
+.xans-product-review .contentView .ec-base-button a em,
+.totalPrice .total,
+#totalProducts tbody td .price,
+.xans-myshop-main li .count,
+.xans-myshop-orderstate .cs .count,
+.xans-myshop-orderstate .order .count,
+.xans-myshop-orderstate .desc em,
+.xans-myshop-asyncbankbook li a,
+.xans-myshop-asyncbenefit .info .memberInfo .name,
+#searchForm .titleArea span.count,
+#mCafe24Order .txtEm,
+#mCafe24Order .txtStrong,
+.xans-order-basketpackage .totalSummary .title h3,
+.xans-order-basketpackage .title.subTitle h3,
+.xans-member-joincomplete .welcome .complete,
+.xans-member-join .agreeAll label {color:#111;}
+
+/* 타이틀 */
+#slideCateList h2 { position:relative; padding:0 0 0 30px; border-bottom:0; line-height:30px; color:#2a2a2a; font-weight:400; font-size:14px; cursor:pointer; background:none;}
+#slideCateList h2.selected .icoCategory { background-image:url("/images/customizing/btn_more_up.png"); }
+#slideCateList h2 .icoCategory { overflow:hidden;outline:none;  position:static;width:20px; height:20px; padding:0; border:0; text-indent:100%; white-space:nowrap; cursor:pointer; background:url("/images/customizing/btn_more.png") no-repeat 5px 48%; background-size:10px 10px; }
+
+/* 분류페이지 뷰타입  */
+.xans-product-normalmenu .viewType { border-radius:0px; -webkit-border-radius:0px; }
+.xans-product-normalmenu .viewType li { display:inline-block; width:31px; height:27px; border:1px solid #eee; border-right:0; background-size:50%; background-repeat:no-repeat; background-position:center;}
+.xans-product-normalmenu .viewType li:first-child { border-radius:0px; -webkit-border-radius:0px; }
+.xans-product-normalmenu .viewType li:last-child { border-radius:0; -webkit-border-radius:0; border-right:1px solid #eee; }
+.xans-product-normalmenu .viewType li.selected { background-color:#fff; border-color:#dedede; }
+.xans-product-normalmenu .viewType li.list { background-image:url("/images/customizing/ico_list.png");}
+.xans-product-normalmenu .viewType li.thumb { background-image:url("/images/customizing/ico_thumb.png");}
+.xans-product-normalmenu .viewType li.gallery { background-image:url("/images/customizing/ico_gallery.png");}
+.xans-product-normalmenu .viewType li.slide { background-image:url("/images/customizing/ico_slide.png");}
+.xans-product-normalmenu .viewType li.selected.list { background-image:url("/images/customizing/ico_list_on.png");}
+.xans-product-normalmenu .viewType li.selected.thumb { background-image:url("/images/customizing/ico_thumb_on.png");}
+.xans-product-normalmenu .viewType li.selected.gallery { background-image:url("/images/customizing/ico_gallery_on.png");}
+.xans-product-normalmenu .viewType li.selected.slide { background-image:url("/images/customizing/ico_slide_on.png");}
+
+/* 상품진열 리스트형 */
+.ec-base-product.typeDesc .thumbnail {width:120px;}
+.ec-base-product.typeDesc .description {padding:0 0 0 130px;}
+
+/* 상품진열 갤러리형 */
+.ec-base-product.typeGallery .description .name {color:#fff !important;font-weight:400 !important;}
+.ec-base-product.typeGallery .description a .name, 
+.ec-base-product.typeGallery .description a p,
+.ec-base-product.typeGallery .description a .price {color:#fff !important;font-weight:400 !important;}
+
+/* 상품진열 슬라이드형 */
+.xans-product-listnormal.typeZoom .zoomList .information .price a {color:#222;}
+.xans-product-listnormal.typeZoom .pagenate .prev { left:0; background-image:url("/images/customizing/btn_product_prev.png"); border-radius:0 2px 2px 0; }
+.xans-product-listnormal.typeZoom .pagenate .next { right:0; background-image:url("/images/customizing/btn_product_next.png"); border-radius:2px 0 0 2px; }
+
+/* 검색페이지 */
+#searchForm .titleArea h2 {background-color:#fff;border-bottom:1px solid #fff;}
+

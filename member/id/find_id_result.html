@@ -1,0 +1,39 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/_ms/css/member.css)-->
+
+<div class="titleArea">
+    <h2>FIND ID</h2>
+</div>
+
+<div module="member_findidresult">
+    <div class="title">
+        <h3>
+            고객님 아이디 찾기가 완료 되었습니다.<br />
+            다음 정보로 가입된 아이디가 총 <span class="point">{$idCnt}개</span> 있습니다.
+        </h3>
+    </div>
+    <ul>
+        <li>
+            <p>이름</p>
+            <span>{$name}</span>
+        </li>
+        <li>
+            <p>{$searchType}</p>
+            <span>{$searchInfo}</span>
+        </li>
+    </ul>
+    <div class="desc">
+        <p>{$searchIds}</p>
+        <span>고객님 즐거운 쇼핑 하세요!</span>
+    </div>
+    <div class="btn">
+        <a href="javascript:go_findlogin('{$id}');" class="btnLogin_bk">LOGIN</a>
+        <a href="javascript:go_findpwd('{$id}','{$mtype}');" class="btnLogin_wh mrt10">비밀번호 찾기</a>
+    </div>
+</div>
+
+<style>
+    #container {
+        margin: 0;
+    }
+</style>

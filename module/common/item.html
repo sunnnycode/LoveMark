@@ -1,0 +1,63 @@
+<div id="mask">
+    <i class="xi-close"></i>
+</div>
+<div id="progressPaybar" style="display: none">
+    <div id="progressPaybarBackground" class="layerProgress"></div>
+    <div id="progressPaybarView">
+        <p class="graph">현재 결제가 진행 중입니다.</p>
+        <p class="txt">
+            본 결제 창은 결제완료 후 자동으로 닫히며, <br />
+            결제 진행 중에 본 결제 창을 닫으시면<br />
+            주문이 되지 않으니 <br />
+            결제 완료 될 때 까지 닫지 마시기 바랍니다.
+        </p>
+    </div>
+</div>
+<div module="Layout_multishopShipping" class="ec-base-layer typeModal">
+    <!--@css(/css/module/layout/multishopShipping.css)-->
+    <!--@js(/js/module/layout/multishopShipping.js)-->
+    <h1>WORLD SHIPPING</h1>
+    <div class="wrap worldshipLayer">
+        <p class="desc">PLEASE SELECT THE DESTINATION COUNTRY AND LANGUAGE :</p>
+        <div class="select">
+            <select module="Layout_multishopShippingCountrylist">
+                <option value="{$country_code}" {$country_default_selected}>SHIPPING TO : {$country_name}</option>
+                <option value="{$country_code}" {$country_default_selected}>SHIPPING TO : {$country_name}</option>
+            </select>
+        </div>
+        <div class="select">
+            <select module="Layout_multishopShippingLanguagelist">
+                <option value="{$shop_domain}" {$shop_default_selected}>LANGUAGE : {$shop_language_name}</option>
+                <option value="{$shop_domain}" {$shop_default_selected}>LANGUAGE : {$shop_language_name}</option>
+            </select>
+        </div>
+    </div>
+    <div class="ec-base-button gFull">
+        <a href="#none" class="btnSubmit">GO</a>
+    </div>
+    <a href="#none" class="btnClose">닫기</a>
+</div>
+<div module="Popup_MultiPopup">
+    <!--
+		$banner_popup_no =
+		※ 노출시킬 팝업의 ID를 숫자로 넣어주세요.
+	-->
+    {$popup}
+</div>
+<div module="Popup_MultiBanner">
+    <!--
+		$banner_popup_no =
+		※ 노출시킬 배너의 ID를 숫자로 넣어주세요.
+	-->
+    {$banner}
+</div>
+
+<style>
+    .xans-popup-multipopup {
+        position: fixed;
+        top: 10px;
+        left: 0;
+        z-index: 99999;
+        width: 100%;
+    }
+</style>

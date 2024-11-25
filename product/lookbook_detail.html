@@ -1,0 +1,27 @@
+<!--@layout(/layout/basic/layout.html)-->
+<div module="product_additional" class="lb_detail">{$product_detail}</div>
+<div module="product_relation" class="lb_detail_realation">
+    <div class="relation">
+        <div module="product_relation">
+            <div module="product_relationlist">
+                <!--    
+                    $count = 
+                -->
+                <ul>
+                    <li>
+                        <a href="/product/lb_detail.html{$param}"><img src="{$img_big}" alt="" /></a>
+                        <div class="box">
+                            <p class="name"><a href="/product/lb_detail.html{$param}">{$name}</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/product/lb_detail.html{$param}"><img src="{$img_big}" alt="" /></a>
+                        <div class="box">
+                            <p class="name"><a href="/product/lb_detail.html{$param}">{$name}</a></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

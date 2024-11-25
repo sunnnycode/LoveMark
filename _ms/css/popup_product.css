@@ -1,0 +1,34 @@
+.cf{overflow: hidden;}
+
+#popup-content{}
+#popup-content .owl-item{cursor: pointer;}
+#popup-content .ec-base-product{margin-top: 0;}
+
+#popup-product{position:fixed;width:100%;height:100%;top:0;left:0;z-index:9999;}
+#popup-product .mask{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.3);opacity: 0;transition: all 0.3s;}
+#popup-product .mask.on{opacity: 1;}
+#popup-product img{max-width: 100%;}
+
+.popup-product-wrap{position:relative;z-index:10001;border:1px solid #000;width:100%;height:100vh;background:#fff;box-sizing:border-box;margin:auto;opacity: 0;transition:all 0.3s;overflow-y: scroll;-ms-overflow-style: none; scrollbar-width: none;}
+.popup-product-wrap::-webkit-scrollbar {display: none;}
+.popup-product-wrap.on{opacity: 1;}
+.popup-product-wrap .popup-header{background: #000;text-align: right;padding: 10px;box-sizing: border-box;}
+.popup-product-wrap .popup-header i{color: #fff;cursor: pointer;}
+
+.popup-product-wrap .left{width: 100%;float: left;padding: 10px;box-sizing: border-box;}
+.popup-product-wrap .left .box{}
+.popup-product-wrap .left .box img{}
+.popup-product-wrap .left .box p{font-weight: 700;font-size: 16px;margin-top: 10px;line-height: 1;}
+
+.popup-product-wrap .right{width: 100%;float: left;padding: 10px;box-sizing: border-box;margin-top: 30px;}
+.popup-product-wrap .right h2{}
+.popup-product-wrap .right .relation{margin-top: 20px;}
+.popup-product-wrap .right .relation > div{width: auto;}
+.popup-product-wrap .right .relation > div > div:last-child .box{margin-bottom: 0;}
+.popup-product-wrap .right .relation .box{overflow: hidden;margin-bottom: 20px;}
+.popup-product-wrap .right .relation .box .thumbnail{width: 40%;float: left;}
+.popup-product-wrap .right .relation .box .thumbnail a{}
+.popup-product-wrap .right .relation .box .description{width: 60%;float: left;padding:10px 0 0 10px;box-sizing: border-box;}
+.popup-product-wrap .right .relation .box .description .name{}
+.popup-product-wrap .right .relation .box .description .spec{margin-top: 10px;}
+.popup-product-wrap .right .relation .box .description .spec li{}

@@ -1,0 +1,143 @@
+<!--@js(/js/module/product/normalmenu.js)-->
+<!--@css(/css/module/product/menuPackage.css)-->
+<!--@css(/css/module/product/normalmenu.css)-->
+
+<!--@js(/_ms/js/timeSale.js)-->
+<!--@js(/module/list/item.js)-->
+<!--@css(/module/list/item.css)-->
+
+<div module="Product_menupackage">
+    <div class="top-banner" module="product_headcategory">{$top_image1_tag_mobile}{$top_image2_tag_mobile}{$top_image3_tag_mobile}</div>
+    <div class="titleArea" module="product_headcategory">
+        <h2>{$title_text_or_image}</h2>
+        <span module="Layout_MobileAction">
+            <a href="#none" onclick="{$go_back}"><img src="//img.echosting.cafe24.com/skin/mobile_ko_KR/layout/btn_back.gif" width="33" alt="뒤로가기" /></a>
+        </span>
+        <div class="funcArea">
+            <span class="likeButton {$disp_likecate_class}"
+                ><button type="button">{$disp_likecate_icon}<strong>{$disp_likecate_count}</strong></button></span
+            >
+        </div>
+    </div>
+    <ul class="menuCategory">
+        <li module="product_displaycategory" style="display:{$display};" class="{$selected}">
+            <a href="/product/list.html?{$param_cate_no}">{$category_name} <span class="count {$product_count_display|display}">({$product_count})</span></a>
+            <ul module="product_children">
+                <li class="{$selected}">
+                    <a href="/product/list.html?{$param_cate_no}">{$category_name} <span class="{$product_count_display|display}">({$product_count})</span></a>
+                    <div class="button">
+                        {$children_icon}
+                        <div module="product_children" class="subCategory">
+                            <ul>
+                                <li class="{$selected}">
+                                    <a href="/product/list.html?{$param_cate_no}">{$category_name} <span class="{$product_count_display|display}">({$product_count})</span></a>
+                                </li>
+                                <li class="{$selected}">
+                                    <a href="/product/list.html?{$param_cate_no}">{$category_name} <span class="{$product_count_display|display}">({$product_count})</span></a>
+                                </li>
+                            </ul>
+                            <img src="//img.echosting.cafe24.com/skin/mobile_ko_KR/product/btn_category_close.png" alt="" class="icoClose" />
+                        </div>
+                    </div>
+                </li>
+                <li class="{$selected}">
+                    <a href="/product/list.html?{$param_cate_no}">{$category_name} <span class="{$product_count_display|display}">({$product_count})</span></a>
+                    <div class="button">
+                        {$children_icon}
+                        <div module="product_children" class="subCategory">
+                            <ul>
+                                <li class="{$selected}">
+                                    <a href="/product/list.html?{$param_cate_no}">{$category_name} <span class="{$product_count_display|display}">({$product_count})</span></a>
+                                </li>
+                                <li class="{$selected}">
+                                    <a href="/product/list.html?{$param_cate_no}">{$category_name} <span class="{$product_count_display|display}">({$product_count})</span></a>
+                                </li>
+                            </ul>
+                            <img src="//img.echosting.cafe24.com/skin/mobile_ko_KR/product/btn_category_close.png" alt="" class="icoClose" />
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div module="product_listrecommend" class="ec-base-product">
+    <!--
+        $count = 3
+        $line = 1
+        $grid = 3
+        $swipe = yes
+    -->
+    <h2>BEST</h2>
+    <ul class="prdList grid2">
+        <!--@import(/_ms/inc/prdList.html)-->
+    </ul>
+</div>
+
+<div module="product_listnew" class="ec-base-product">
+    <!--
+        $count = 3
+        $line = 1
+        $grid = 3
+        $swipe = yes
+    -->
+    <h2>NEW ARRIVAL</h2>
+    <ul class="prdList grid2">
+        <!--@import(/_ms/inc/prdList.html)-->
+    </ul>
+</div>
+
+<div module="product_normalmenu">
+    <p class="prdCount"><span>{$total_count}</span>개의 상품</p>
+    <div class="sort">
+        <select id="selArray" name="selArray" module="product_Orderby">
+            <option value="{$param}">{$sort_name}</option>
+            <option value="{$param}">{$sort_name}</option>
+        </select>
+        <p><span></span><i class="xi-angle-down-thin"></i></p>
+        <ul></ul>
+    </div>
+</div>
+
+<div class="ec-base-product typeThumb" module="product_listnormal">
+    <!--@js(/js/module/product/listnormal.js)-->
+    <!--
+        $count = 16
+        $cache = yes
+        $basket_result = /product/add_basket.html
+        $basket_option = /product/basket_option.html
+    -->
+    <ul class="prdList grid2">
+        <!--@import(/_ms/inc/prdList.html)-->
+    </ul>
+</div>
+
+<div module="product_normalpaging" class="ec-base-paginate">
+    <a href="{$param_first}" class="first"><img src="/web/img/common/page_first.png" alt="첫 페이지" /></a>
+    <a href="{$param_before}"><img src="/web/img/common/page_prev.png" alt="이전 페이지" /></a>
+    <ol>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+    </ol>
+    <a href="{$param_next}"><img src="/web/img/common/page_next.png" alt="다음 페이지" /></a>
+    <a href="{$param_last}" class="last"><img src="/web/img/common/page_last.png" alt="마지막 페이지" /></a>
+</div>
+
+<!-- <div module="product_listmore" class="ec-base-paginate typeMoreview">
+    <a href="#none" onclick="{$more_action}" class="btnMore"> 제품 더보기(<span id="more_current_page">{$current_page}</span>/<span id="more_total_page">{$total_page}</span>)<span class="icoMore"></span> </a>
+</div> -->
+
+<style>
+    .titleArea h2 {
+        padding: 15px 10px 0;
+    }
+</style>
+
+<script>
+    jq(() => {
+        timeSaleJsPkg.listSaleTimeCast();
+    });
+</script>

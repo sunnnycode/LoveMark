@@ -1,0 +1,40 @@
+<!--@layout(/layout/basic/layout.html)-->
+<div module="search_form">
+    <div class="search-box">
+        <div class="item">{$form.keyword}</div>
+        <p class="button">
+            <button type="submit">
+                <i class="xi-search"></i>
+            </button>
+        </p>
+    </div>
+    <p>총 {$total_count}개의 상품이 검색되었습니다.</p>
+</div>
+
+<div module="Search_Result" class="ec-base-product typeThumb">
+    <!--
+        $count = 12
+    -->
+    <ul class="prdList grid2">
+        <!--@import(/_ms/inc/prdList3.html)-->
+    </ul>
+</div>
+
+<div module="search_paging" class="ec-base-paginate">
+    <a href="{$param_first}" class="first"><img src="/web/img/common/page_first.png" alt="첫 페이지" /></a>
+    <a href="{$param_before}"><img src="/web/img/common/page_prev.png" alt="이전 페이지" /></a>
+    <ol>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+    </ol>
+    <a href="{$param_next}"><img src="/web/img/common/page_next.png" alt="다음 페이지" /></a>
+    <a href="{$param_last}" class="last"><img src="/web/img/common/page_last.png" alt="마지막 페이지" /></a>
+</div>

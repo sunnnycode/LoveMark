@@ -1,0 +1,36 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/myshop/src/myshop.css)-->
+<div class="titleArea" module="Myshop_Head">
+    <h2>{$mileage_name} 내역</h2>
+</div>
+
+<div module="myshop_mileagePackage">
+    <div module="myshop_summary">
+        <div class="info-block">
+            <p>총 {$mileage_name}</p>
+            <div>{$total_mileage}</div>
+        </div>
+        <div class="info-block">
+            <p>사용가능 {$mileage_name}</p>
+            <div>{$avail_mileage}</div>
+        </div>
+        <div class="info-block">
+            <p>사용된 {$mileage_name}</p>
+            <div>{$used_mileage}</div>
+        </div>
+        <div class="info-block">
+            <p>미가용 {$mileage_name}</p>
+            <div>{$unavail_mileage}</div>
+        </div>
+        <div class="info-block">
+            <p>환불예정 {$mileage_name}</p>
+            <div>{$refunded_mileage}</div>
+        </div>
+    </div>
+
+    <ul>
+        <li><a href="/myshop/mileage/mileageList.html">적립내역</a></li>
+        <li><a href="/myshop/mileage/unavailList.html">미가용 적립내역</a></li>
+        <li><a href="/myshop/mileage/couponList.html">미가용쿠폰/회원등급 적립내역</a></li>
+    </ul>
+</div>

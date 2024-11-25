@@ -1,0 +1,72 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/myshop/src/myshop.css)-->
+<div class="titleArea" module="myshop_boardTitle">
+    <h2>나의 게시글</h2>
+</div>
+
+<div module="myshop_BoardPackage">
+    <div module="myshop_boardList">
+        <ul>
+            <!--
+                $count = 10
+                $relation_post = yes
+            -->
+
+            <li>
+                <a href="{$board_read_url}">
+                    <strong class="subject">{$subject}<span class="commentCount">{$comment_count}</span></strong>
+                    <span class="writer">{$writer}</span>
+                    <ul class="bottom">
+                        <li class="date">
+                            <i class="xi-clock-o"></i>
+                            <span>{$write_date}</span>
+                        </li>
+                        <li class="cate">
+                            <i class="xi-bars"></i>
+                            <span>{$board_category}</span>
+                        </li>
+                        <li class="view">
+                            <i class="xi-eye-o"></i>
+                            <span>{$hit_count}</span>
+                        </li>
+                    </ul>
+                    <span class="num">{$no}</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="{$board_read_url}">
+                    <strong class="subject">{$subject}<span class="commentCount">{$comment_count}</span></strong>
+                    <span class="writer">{$writer}</span>
+                    <ul class="bottom">
+                        <li class="date">
+                            <i class="xi-clock-o"></i>
+                            <span>{$write_date}</span>
+                        </li>
+                        <li class="cate">
+                            <i class="xi-bars"></i>
+                            <span>{$board_category}</span>
+                        </li>
+                        <li class="view">
+                            <i class="xi-eye-o"></i>
+                            <span>{$hit_count}</span>
+                        </li>
+                    </ul>
+                    <span class="num">{$no}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div module="myshop_boardlistPaging" class="ec-base-paginate typeList">
+    <!--
+        $relation_post = yes
+    -->
+    <a href="{$param_prev}" class="btnPrev">이전 페이지</a>
+    <ol>
+        <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+        <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+    </ol>
+    <a href="{$param_next}" class="btnNext">다음 페이지</a>
+</div>

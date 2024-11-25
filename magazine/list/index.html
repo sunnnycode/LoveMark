@@ -1,0 +1,162 @@
+<!--@layout(/layout/basic/layout.html)-->
+<div class="gallery-wr">
+    <div class="titleArea">
+        <h2>매거진</h2>
+    </div>
+    <div module="Board_ListPackage_8">
+        <div class="boardSort">
+            <span module="board_category_8">{$form.board_category}</span>
+        </div>
+        <ul module="board_list_8" class="grid1">
+            <!--
+              $count = 
+              $product_name_cut = 30
+              $login_page_url = /member/login.html
+              $deny_access_url = /index.html
+          -->
+            <li class="item">
+                <div onclick="window.location.href='/magazine/index.html{$param_read}'">
+                    <div class="thumbnail">
+                        <span class="thumb">
+                            <img src="{$img_src|replace:/gallery,/}" />
+                        </span>
+                    </div>
+                    <div class="description">
+                        <p class="subject">{$subject}</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item">
+                <div onclick="window.location.href='/magazine/index.html{$param_read}'">
+                    <div class="thumbnail">
+                        <span class="thumb">
+                            <img src="{$img_src|replace:/gallery,/}" />
+                        </span>
+                    </div>
+                    <div class="description">
+                        <p class="subject">{$subject}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div module="board_paging_8" class="ec-base-paginate typeList">
+    <!--
+        $count = 5
+    -->
+    <a href="{$param_prev}" class="btnPrev">이전 페이지</a>
+    <ol>
+        <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+        <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+    </ol>
+    <a href="{$param_next}" class="btnNext">다음 페이지</a>
+</div>
+
+<style>
+    /* #container {
+        width: 100%;
+        padding: 0 3%;
+        box-sizing: border-box;
+    } */
+    .titleArea h2 {
+        font-size: 27px;
+        font-weight: 700;
+    }
+    .boardSort {
+        display: none;
+    }
+    .customSort {
+        display: block;
+    }
+    .customSort > div {
+        display: flex;
+    }
+    .customSort > div a {
+        display: block;
+        width: 50%;
+        height: 45px;
+        line-height: 45px;
+        background-color: #f9f9f9;
+        font-size: 16px;
+        text-align: center;
+        border: 1px solid #dedede;
+        box-sizing: border-box;
+    }
+    .customSort > div a.active {
+        border-top: 3px solid var(--point);
+        font-weight: bold;
+        background-color: #fff;
+        color: var(--point);
+        border-bottom: none;
+    }
+    .customSort > div a:first-child {
+        border-right: none;
+    }
+    .gallery-wr {
+    }
+    .gallery-wr ul {
+        overflow: hidden;
+    }
+    .gallery-wr ul > li {
+        float: left;
+        text-align: center;
+        margin-bottom: 2%;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .gallery-wr ul > li img {
+        width: 100%;
+    }
+    .gallery-wr ul > li .description {
+        margin-top: 10px;
+    }
+
+    .gallery-wr .grid2 {
+    }
+    .gallery-wr .grid2 li {
+        width: calc(50% - 1%);
+        margin-right: 2%;
+    }
+    .gallery-wr .grid2 li:nth-child(2n) {
+        margin-right: 0;
+    }
+
+    .gallery-wr .grid3 {
+        padding-top: 50px;
+    }
+    .gallery-wr .grid3 li {
+        width: calc(33.333% - 1%);
+        margin-right: 1.5%;
+        border: 1px solid #dedede;
+        box-sizing: border-box;
+    }
+    .gallery-wr .grid3 li:nth-child(3n) {
+        margin-right: 0;
+    }
+    .gallery-wr .grid1 {
+        padding-top: 20px;
+    }
+    .gallery-wr .grid1 li {
+        border: 1px solid #dedede;
+        box-sizing: border-box;
+    }
+    .gallery-wr .grid1 li .description {
+        padding: 10px 0 20px;
+    }
+
+    .gallery-wr .grid1 li .subject {
+        display: none;
+    }
+</style>
+
+<script>
+    jq(() => {
+        const list = jq(".gallery-wr .grid1 li");
+        list.each(function () {
+            $(this).find(".subject").text($(this).find(".subject").text().split("|")[0]);
+        });
+
+        jq(".gallery-wr .grid1 li .subject").show();
+    });
+</script>

@@ -1,0 +1,32 @@
+#footer {padding: 30px 5% 100px;box-sizing: border-box;color: #999;font-size: 13px;line-height: 20px;border-top: 1px solid #dedede;}
+#footer a{color: #777;}
+#footer .area{overflow: hidden;margin-bottom: 35px;}
+#footer .area > div{float: left;}
+#footer .area .footer_left{width: 60%;}
+#footer .area .footer_left p.tit{font-size: 15px;}
+#footer .area .footer_right{width: 40%;}
+#footer .area > div p.tit{font-size: 16px;font-weight: 700;margin-bottom: 10px;color: #000;}
+#footer .area > div p.tit a{color: #000;}
+#footer .area > div span{font-size: 13px;line-height: 21px;display: block;}
+
+#footer .footer_link{margin-bottom: 30px;}
+#footer .footer_link a{margin-right: 15px; font-size: 13px; font-weight: 600; color: #000;}
+#footer .footer_link a.privacy {color: var(--point);}
+
+#footer .cs-area .cs {background-color: #f8f8f8; border: 1px solid #ddd; padding: 20px; box-sizing: border-box; border-radius: 15px; margin-bottom: 20px;}
+#footer .cs-area .cs .tit{color: #333; font-size: 24px; font-weight: bold; margin-bottom: 10px;}
+#footer .cs-area .cs .tit a{color: #333 ;}
+#footer .cs-area .cs div p {font-size: 14px; color: #333; margin-bottom: 5px; line-height: 1.5;}
+#footer .cs-area .cs div p:last-child {margin-bottom: 0;}
+#footer .cs-area .cs div p b {font-weight: 700; color: #CB3530;}
+#footer .cs-area .cs div p b a { color: #CB3530; border-bottom: 1px solid #CB3530;}
+
+#footer .info{}
+#footer .info > span i{font-size: 16px;vertical-align: middle;margin-top: -1px;margin-left: 5px;transition: all 0.3s;}
+#footer .info > span i.on{transform: rotate(180deg);}
+#footer .info > div{display: none; line-height: 1.8;}
+
+#footer .copyright{margin: 10px 0;}
+
+#footer .footer_right{}
+#footer .footer_right a{font-size: 25px;color: #000;margin-right: 0 6px;}

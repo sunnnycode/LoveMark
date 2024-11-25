@@ -1,0 +1,37 @@
+<div class="search-area">
+    <div module="search_hotkeyword" class="popular">
+        <h2>인기검색어</h2>
+        <ul>
+            <li><a href="{$hot_keyword_url}">{$hot_keyword_name}</a></li>
+            <li><a href="{$hot_keyword_url}">{$hot_keyword_name}</a></li>
+        </ul>
+    </div>
+    <div module="search_recentkeyword">
+        <h2 class="tit">최근검색어</h2>
+        <p class="{$recent_none_display|display}">최근 검색어가 없습니다.</p>
+        <ul class="{$recent_list_display|display}">
+            <li data-index="{$recent_keyword_index}">
+                <a href="{$recent_keyword_url}">{$recent_keyword_name}</a>
+                <div type="button" class="btnDelete" onclick="{$recent_keyword_remove}">
+                    <i class="xi-close"></i>
+                </div>
+            </li>
+            <li data-index="{$recent_keyword_index}">
+                <a href="{$recent_keyword_url}">{$recent_keyword_name}</a>
+                <div type="button" class="btnDelete" onclick="{$recent_keyword_remove}">
+                    <i class="xi-close"></i>
+                </div>
+            </li>
+        </ul>
+        <div class="button">
+            <button type="button" class="btnDeleteAll" onclick="{$recent_keyword_remove_all}">검색기록 전체삭제</button>
+        </div>
+    </div>
+    <div class="bg"></div>
+    <div class="close_btn">
+        <i class="xi-close"></i>
+    </div>
+</div>
+
+<!--@css(/module/search/item.css)-->
+<!--@js(/module/search/item.js)-->

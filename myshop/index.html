@@ -1,0 +1,85 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<div class="titleArea">
+    <h2>마이페이지</h2>
+</div>
+
+<div module="layout_logincheck">
+    <!--
+        $url = /member/login.html
+    -->
+</div>
+
+<div class="mypage-wr">
+    <div module="myshop_asyncbenefit" class="sec_01">
+        <div>
+            <span>{$member_name}</span>님은<br />
+            <span>[{$group_name}]</span>입니다.
+        </div>
+        <ul module="myshop_asyncbankbook">
+            <li>
+                <span>쿠폰</span>
+                <p><a href="/myshop/coupon/coupon.html">{$coupon_cnt}</a></p>
+            </li>
+            <li>
+                <span>적립금</span>
+                <p><a href="/myshop/mileage/historyList.html">{$avail_mileage}</a></p>
+            </li>
+        </ul>
+    </div>
+
+    <div module="myshop_orderstate" class="sec_02">
+        <div class="title">
+            <h3>주문처리 현황 <span>(최근 3개월 기준)</span></h3>
+            <a class="btnNormal" href="/myshop/order/list.html?mode=cs&history"> 취소교환반품 내역</a>
+        </div>
+        <ul>
+            <li>
+                <p>입금전</p>
+                <a href="{$shppiedBeforeUrl}">
+                    <span>{$shppiedBeforeCount}</span>
+                </a>
+            </li>
+            <li>
+                <p>배송준비중</p>
+                <a href="{$shppiedStandbyUrl}">
+                    <span>{$shppiedStandbyCount}</span>
+                </a>
+            </li>
+            <li>
+                <p>배송중</p>
+                <a href="{$shppiedBeginUrl}">
+                    <span>{$shppiedBeginCount}</span>
+                </a>
+            </li>
+            <li>
+                <p>배송완료</p>
+                <a href="{$shppiedComplateUrl}">
+                    <span>{$shppiedComplateCount}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div module="myshop_main" class="sec_03">
+        <ul>
+            <li><a href="/myshop/order/list.html">주문내역 조회</a></li>
+            <li><a href="/myshop/mileage/historyList.html">{$mileage_name} 내역</a></li>
+            <li class="{$coupon_display|display}"><a href="/myshop/coupon/coupon.html">쿠폰 내역</a></li>
+            <li module="Layout_couponzoneBanner"><a href="/coupon/coupon_zone.html">쿠폰존</a></li>
+            <li><a href="/myshop/recent_list.html">최근 본 상품</a></li>
+            <li><a href="/myshop/wish_list.html">나의 위시리스트</a></li>
+            <li><a href="/myshop/board_list.html">나의 게시글</a></li>
+            <li><a href="/member/modify.html">회원 정보 수정</a></li>
+            <li><a href="/myshop/addr/list.html">배송지 관리</a></li>
+            <li><a href="/exec/front/Member/logout/">로그아웃</a></li>
+            <!-- <li class="{$regular_delivery_display|display}"><a href="/myshop/regular_delivery.html">정기배송 관리</a></li>
+            <li class="{$myLike_display|display}"><a href="{$myLike_href}">좋아요</a></li>
+            <li class="{$deposit_display|display}"><a href="/myshop/deposits/historyList.html">{$deposit_name}</a></li>
+            <li class="{$consult_display|display}"><a href="/board/consult/list.html">1:1 맞춤상담</a></li> -->
+        </ul>
+    </div>
+</div>
+
+<!--@css(/myshop/src/myshop.css)-->
+<!--@js(/myshop/src/myshop.js)-->

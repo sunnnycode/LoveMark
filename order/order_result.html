@@ -1,0 +1,334 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/_ms/css/order.css)-->
+
+<div class="titleArea">
+    <h2>주문완료</h2>
+</div>
+
+<div module="Order_result" unroll="1">
+    <div class="sec01">
+        <img src="/web/img/common/result_check_ico.png" alt="" />
+        <p>고객님의 주문이 정상적으로 <span class="point">완료</span>되었습니다.</p>
+        <ul>
+            <li>
+                <span>주문번호</span>
+                <strong>{$order_id}</strong>
+            </li>
+            <li>
+                <span>주문일자</span>
+                <strong>{$order_date}</strong>
+            </li>
+        </ul>
+    </div>
+
+    <div class="sec02">
+        <div class="title toggle-btn on">
+            <h3>주문상품</h3>
+        </div>
+        <div class="toggle-area">
+            <ul module="Order_normalresultlist" class="order-list">
+                <li>
+                    <div class="a1">
+                        <a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+                    </div>
+                    <div class="right">
+                        <div class="a2">
+                            <p class="name">{$product_name_link}</p>
+                            <ul class="option">
+                                <li>
+                                    <span class="{$option_display|display}">{$option_str}</span>
+                                </li>
+                            </ul>
+                            <ul class="price">
+                                <li id="{$product_price_div_id}" class="{$discount}">
+                                    <p>{$product_price_front_head}{$product_price_front}<span>{$product_price_front_tail}</span></p>
+                                </li>
+                                <li id="{$product_sale_price_div_id}" class="{$product_sale_price_display|display}">
+                                    <p><span id="{$product_sale_price_front_id}">{$product_sale_price_front}</span></p>
+                                </li>
+                            </ul>
+                            <p class="quantity">수량 {$product_quantity}개</p>
+                        </div>
+    
+                        <div class="a3">
+                            <p class="{$subscription_show_display|display}"><span>배송주기</span> <span>{$subscription_option_str}</span></p>
+                            <p class="{$allotment_display|display}">무이자할부 상품</p>
+                            <p class="{$expiration_date_display|display}">유효기간 : {$expiration_date}</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="a1">
+                        <a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+                    </div>
+                    <div class="right">
+                        <div class="a2">
+                            <p class="name">{$product_name_link}</p>
+                            <ul class="option">
+                                <li>
+                                    <span class="{$option_display|display}">{$option_str}</span>
+                                </li>
+                            </ul>
+                            <ul class="price">
+                                <li id="{$product_price_div_id}" class="{$discount}">
+                                    <p>{$product_price_front_head}{$product_price_front}<span>{$product_price_front_tail}</span></p>
+                                </li>
+                                <li id="{$product_sale_price_div_id}" class="{$product_sale_price_display|display}">
+                                    <p><span id="{$product_sale_price_front_id}">{$product_sale_price_front}</span></p>
+                                </li>
+                            </ul>
+                            <p class="quantity">수량 {$product_quantity}개</p>
+                        </div>
+    
+                        <div class="a3">
+                            <p class="{$subscription_show_display|display}"><span>배송주기</span> <span>{$subscription_option_str}</span></p>
+                            <p class="{$allotment_display|display}">무이자할부 상품</p>
+                            <p class="{$expiration_date_display|display}">유효기간 : {$expiration_date}</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="order-list {$individual_display|display}" module="Order_individualresultlist">
+                <li>
+                    <div class="a1">
+                        <a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+                    </div>
+                    <div class="right">
+                        <div class="a2">
+                            <p class="name">{$product_name_link}</p>
+                            <ul class="option">
+                                <li>
+                                    <span class="{$option_display|display}">{$option_str}</span>
+                                    <ul class="option-set" module="Order_optionSet">
+                                        <li><strong>{$product_name}</strong>{$option_str} ({$qty}개)</li>
+                                        <li><strong>{$product_name}</strong>{$option_str} ({$qty}개)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="price">
+                                <li>
+                                    <p id="{$product_purchase_price_div_id}">{$product_purchase_price_front_head}{$product_purchase_price_front}<span>{$product_purchase_price_front_tail}</span> </p>
+                                    <p class="{$product_purchase_ref_display|display}">{$product_purchase_price_back_head}{$product_purchase_price_back}{$product_purchase_price_back_tail}</p>
+                                </li>
+                                <li id="{$product_sale_price_div_id}" class="{$product_sale_price_display|display}">
+                                    <p><span id="{$product_sale_price_front_id}">{$product_sale_price_front}</span></p>
+                                </li>
+                            </ul>
+                            <p class="quantity">수량 {$product_quantity_text}개</p>
+                        </div>
+    
+                        <div class="a3">
+                            <p class="{$subscription_show_display|display}"><span>배송주기</span> <span>{$subscription_option_str}</span></p>
+                            <p class="{$allotment_display|display}">무이자할부 상품</p>
+                            <p class="{$expiration_date_display|display}">유효기간 : {$expiration_date}</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="a1">
+                        <a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+                    </div>
+                    <div class="right">
+                        <div class="a2">
+                            <p class="name">{$product_name_link}</p>
+                            <ul class="option">
+                                <li>
+                                    <span class="{$option_display|display}">{$option_str}</span>
+                                    <ul class="option-set" module="Order_optionSet">
+                                        <li><strong>{$product_name}</strong>{$option_str} ({$qty}개)</li>
+                                        <li><strong>{$product_name}</strong>{$option_str} ({$qty}개)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="price">
+                                <li>
+                                    <p id="{$product_purchase_price_div_id}">{$product_purchase_price_front_head}{$product_purchase_price_front}<span>{$product_purchase_price_front_tail}</span> </p>
+                                    <p class="{$product_purchase_ref_display|display}">{$product_purchase_price_back_head}{$product_purchase_price_back}{$product_purchase_price_back_tail}</p>
+                                </li>
+                                <li id="{$product_sale_price_div_id}" class="{$product_sale_price_display|display}">
+                                    <p><span id="{$product_sale_price_front_id}">{$product_sale_price_front}</span></p>
+                                </li>
+                            </ul>
+                            <p class="quantity">수량 {$product_quantity_text}개</p>
+                        </div>
+    
+                        <div class="a3">
+                            <p class="{$subscription_show_display|display}"><span>배송주기</span> <span>{$subscription_option_str}</span></p>
+                            <p class="{$allotment_display|display}">무이자할부 상품</p>
+                            <p class="{$expiration_date_display|display}">유효기간 : {$expiration_date}</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="sec03 {$gift_display|display}">
+        <div class="title toggle-btn">
+            <h3>사은품</h3>
+        </div>
+        <div class="toggle-area">
+            <ul module="Order_giftresultlist" class="order-list">
+                <li>
+                    <div class="a1">
+                        <a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+                    </div>
+                    <div class="right">
+                        <div class="a2">
+                            <p class="name">{$product_name}</p>
+                            <p class="gift-type">{$gift_type_text}</p>
+                            <ul class="option">
+                                <li>
+                                    <span class="{$option_display|display}">{$option_str}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="a3">
+                            <strong class="price">{$price_unit_head}{$product_total_price}<span>{$price_unit_tail}</span></strong>
+                            <p class="quantity">수량 {$product_quantity}개</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="a1">
+                        <a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+                    </div>
+                    <div class="right">
+                        <div class="a2">
+                            <p class="name">{$product_name}</p>
+                            <p class="gift-type">{$gift_type_text}</p>
+                            <ul class="option">
+                                <li>
+                                    <span class="{$option_display|display}">{$option_str}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="a3">
+                            <strong class="price">{$price_unit_head}{$product_total_price}<span>{$price_unit_tail}</span></strong>
+                            <p class="quantity">수량 {$product_quantity}개</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="sec04">
+        <div class="title">
+            <h3>결제수단</h3>
+        </div>
+        <div class="info-block t1">
+            <p>결제수단</p>
+            <div>
+                {$paymethod_name}
+                <div class="desc">
+                    <p>
+                        {$paymethod_detail}
+                    </p>
+                    <p class="{$cashreceipt_display|display}">
+                        현금영수증 발행 :
+                        <p class="{$cashreceipt_type_complete_display|display}">신청 <span class="txtNormal">({$cashreceipt_identy_type}) {$cashreceipt_identification}</span></p>
+                        <p class="{$cashreceipt_type_notapply_display|display}">신청안함</p>
+                        <p class="{$cashreceipt_type_fail_display|display}">신청실패<br /><span class="txtInfo txt11">하단의 주문확인하기를 클릭하고 주문상세조회에서 다시 신청하시거나 관리자에게 문의하시기 바랍니다.</span></p>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="info-block t2 {$eguarantee_display|display}">
+            <p>전자보증보험 서비스정보</p>
+            <div>{$eguarantee_detail}</div>
+        </div>
+    </div>
+
+    <div class="sec05">
+        <div class="title">
+            <h3>배송지</h3>
+        </div>
+        <div>
+            <div class="info-block t3">
+                <p>수령인</p>
+                <div>{$rname}</div>
+            </div>
+            <div class="info-block t4">
+                <p>주소</p>
+                <div>{$rzipcode} {$raddr}</div>
+            </div>
+            <div class="info-block t5">
+                <p>연락처</p>
+                <div>{$rphone_2}<br/>{$rphone_1}</div>
+            </div>
+            <div class="info-block t6">
+                <p>배송요청</p>
+                <div>{$rmessage}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sec06">
+        <div class="title">
+            <h3>결제정보</h3>
+        </div>
+        <div>
+            <div class="info-block t7">
+                <p>상품 합계</p>
+                <div>{$total_product_ship_price_front}</div>
+            </div>
+            <div class="info-block t8 {$total_sale_display|display}">
+                <p>할인 합계</p>
+                <div>{$total_sale_price_front}</div>
+            </div>
+            <div class="info-block t9">
+                <p>배송비</p>
+                <div>{$total_basic_ship_fee}</div>
+            </div>
+            <div class="info-block t10">
+                <p>결제금액</p>
+                <div>{$payed_order_price_front}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sec07 {$total_mileage_summary_display|display}">
+        <div class="title">
+            <h3>적립 혜택</h3>
+        </div>
+        <div>
+            <div class="info-block t11">
+                <p>상품별 적립금</p>
+                <div>{$total_product_mileage_price}</div>
+            </div>
+            <div class="info-block t12">
+                <p>적립 예정금액</p>
+                <div>{$total_mileage_price}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sec08">
+        <div>
+            <a href="#none" onclick="{$action_issue_cash}" class="btnNormal {$issue_cash_display|display}">현금영수증 신청</a>
+            <a href="#none" onclick="{$action_issue_tax}" class="btnNormal {$issue_tax_display|display}">세금계산서 신청</a>
+            <a href="#none" onclick="{$action_print_spec}" class="btnNormal {$print_spec_display|display}">거래명세서 인쇄</a>
+            <a href="#none" onclick="{$action_print_pg_card}" class="btnNormal {$print_pg_card_display|display}">카드매출전표 인쇄</a>
+            <a href="#none" onclick="{$action_print_store}" class="btnNormal {$print_store_display|display}">수령지정보 인쇄</a>
+        </div>
+        <div>
+            <a href="/myshop/order/list.html">주문 확인하기</a>
+            <a href="/">계속 쇼핑하기</a>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    #container {margin: 0;}
+</style>
+
+<script>
+    jq(() => {
+        jq(".toggle-btn").on("click", function(){
+            jq(this).toggleClass("on");
+            jq(this).parent().find("> .toggle-area").slideToggle();
+        })
+    })
+</script>

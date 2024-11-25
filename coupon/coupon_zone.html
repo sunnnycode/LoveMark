@@ -1,0 +1,230 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/myshop/src/myshop.css)-->
+<div class="titleArea" module="custom_moduleedit_101">
+    <h2>쿠폰존</h2>
+</div>
+
+<div module="Coupon_zonePackage">
+    <!--@js(/js/module/coupon/zonePackage.js)-->
+
+    <div class="tab">
+        <ul class="menu">
+            <li class="selected"><a href="#none" onclick="couponZone.showBestCoupon();">Best Coupons</a></li>
+            <li><a href="#none" onclick="couponZone.showNewCoupon();">New Coupons</a></li>
+        </ul>
+    </div>
+
+    <div id="dBestCoupon" module="Coupon_Zonebest">
+        <!--
+            $count = 2
+        -->
+        <div class="couponSkinArea">
+            <ul class="couponzone-lise">
+                <li>
+                    <div class="coupon {$background_class}" {$call_coupon_detail}>
+                        <figure>
+                            <img src="{$background_url}" alt="" />
+                        </figure>
+                        <div class="text">
+                            <div class="detail">
+                                <strong class="title" style="color: #483b1b">{$coupon_name|cut:13,...}</strong>
+                                <p class="discount" style="color: #d07b01">
+                                    <span>{$coupon_content}</span>
+                                </p>
+                                <p class="period" style="color: #685219">{$coupon_period}</p>
+                            </div>
+                            <div class="button">
+                                <a href="{$coupon_issue_url}"><img src="{$download_url}" alt="다운받기" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="coupon {$background_class}" {$call_coupon_detail}>
+                        <figure>
+                            <img src="{$background_url}" alt="" />
+                        </figure>
+                        <div class="text">
+                            <div class="detail">
+                                <strong class="title" style="color: #483b1b">{$coupon_name|cut:13,...}</strong>
+                                <p class="discount" style="color: #d07b01">
+                                    <span>{$coupon_content}</span>
+                                </p>
+                                <p class="period" style="color: #685219">{$coupon_period}</p>
+                            </div>
+                            <div class="button">
+                                <a href="{$coupon_issue_url}"><img src="{$download_url}" alt="다운받기" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="dNewCoupon" module="Coupon_Zonenew" style="display: none">
+        <!--
+            $count = 2
+        -->
+        <div class="couponSkinArea">
+            <ul class="couponzone-lise">
+                <li>
+                    <div class="coupon {$background_class}" {$call_coupon_detail}>
+                        <figure>
+                            <img src="{$background_url}" alt="" />
+                        </figure>
+                        <div class="text">
+                            <div class="detail">
+                                <strong class="title" style="color: #483b1b">{$coupon_name|cut:13,...}</strong>
+                                <p class="discount" style="color: #d07b01">
+                                    <span>{$coupon_content}</span>
+                                </p>
+                                <p class="period" style="color: #685219">{$coupon_period}</p>
+                            </div>
+                            <div class="button">
+                                <a href="{$coupon_issue_url}"><img src="{$download_url}" alt="다운받기" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="coupon {$background_class}" {$call_coupon_detail}>
+                        <figure>
+                            <img src="{$background_url}" alt="" />
+                        </figure>
+                        <div class="text">
+                            <div class="detail">
+                                <strong class="title" style="color: #483b1b">{$coupon_name|cut:13,...}</strong>
+                                <p class="discount" style="color: #d07b01">
+                                    <span>{$coupon_content}</span>
+                                </p>
+                                <p class="period" style="color: #685219">{$coupon_period}</p>
+                            </div>
+                            <div class="button">
+                                <a href="{$coupon_issue_url}"><img src="{$download_url}" alt="다운받기" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div module="Coupon_Zone">
+        <!--
+            $coupon_down_result_url = /coupon/coupon_down_result.html
+        -->
+        <div class="couponZone">
+            <div class="couponzone-title">
+                <strong>{$zone_title}</strong>
+            </div>
+            {$form_start}
+            <div class="couponSkinArea">
+                <ul module="Coupon_aZonelist" class="couponzone-lise">
+                    <li>
+                        <div class="coupon {$background_class}" {$call_coupon_detail}>
+                            <figure>
+                                <img src="{$background_url}" alt="" />
+                            </figure>
+                            <div class="text">
+                                <div class="detail">
+                                    <strong class="title" style="color: #483b1b">{$coupon_name|cut:13,...}</strong>
+                                    <p class="discount" style="color: #d07b01">
+                                        <span>{$coupon_content}</span>
+                                    </p>
+                                    <p class="period" style="color: #685219">{$coupon_period}</p>
+                                </div>
+                                <div class="button">
+                                    <a href="{$coupon_issue_url}"><img src="{$download_url}" alt="다운받기" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="coupon {$background_class}" {$call_coupon_detail}>
+                            <figure>
+                                <img src="{$background_url}" alt="" />
+                            </figure>
+                            <div class="text">
+                                <div class="detail">
+                                    <strong class="title" style="color: #483b1b">{$coupon_name|cut:13,...}</strong>
+                                    <p class="discount" style="color: #d07b01">
+                                        <span>{$coupon_content}</span>
+                                    </p>
+                                    <p class="period" style="color: #685219">{$coupon_period}</p>
+                                </div>
+                                <div class="button">
+                                    <a href="{$coupon_issue_url}"><img src="{$download_url}" alt="다운받기" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                {$form_end}
+            </div>
+        </div>
+
+        <div class="couponZone">
+            <div class="couponzone-title">
+                <strong>{$zone_title}</strong>
+            </div>
+            {$form_start}
+            <div class="couponSkinArea">
+                <ul module="Coupon_aZonelist" class="couponzone-lise">
+                    <li>
+                        <div class="coupon {$background_class}" {$call_coupon_detail}>
+                            <figure>
+                                <img src="{$background_url}" alt="" />
+                            </figure>
+                            <div class="text">
+                                <div class="detail">
+                                    <strong class="title" style="color: #483b1b">{$coupon_name|cut:13,...}</strong>
+                                    <p class="discount" style="color: #d07b01">
+                                        <span>{$coupon_content}</span>
+                                    </p>
+                                    <p class="period" style="color: #685219">{$coupon_period}</p>
+                                </div>
+                                <div class="button">
+                                    <a href="{$coupon_issue_url}"><img src="{$download_url}" alt="다운받기" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="coupon {$background_class}" {$call_coupon_detail}>
+                            <figure>
+                                <img src="{$background_url}" alt="" />
+                            </figure>
+                            <div class="text">
+                                <div class="detail">
+                                    <strong class="title" style="color: #483b1b">{$coupon_name|cut:13,...}</strong>
+                                    <p class="discount" style="color: #d07b01">
+                                        <span>{$coupon_content}</span>
+                                    </p>
+                                    <p class="period" style="color: #685219">{$coupon_period}</p>
+                                </div>
+                                <div class="button">
+                                    <a href="{$coupon_issue_url}"><img src="{$download_url}" alt="다운받기" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                {$form_end}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="help coupon-help">
+    <p>쿠폰 이용 안내</p>
+    <div>
+        <ol>
+            <li>쿠폰 다운로드 및 사용은 로그인 후 이용가능합니다.</li>
+            <li>쿠폰 상세정보는 쿠폰을 클릭하면 확인하실 수 있습니다.</li>
+            <li>쿠폰의 이용기간이 만료되면 별도의 통보없이 자동 소멸됩니다.</li>
+            <li>동일쿠폰은 1장 이상 중복 소유가 불가능합니다. (쿠폰 사용 후 재발급은 가능합니다.)</li>
+            <li>쿠폰의 할인 적용은 쿠폰 할인 속성에 따라 다르게 적용될 수 있습니다.</li>
+        </ol>
+    </div>
+</div>

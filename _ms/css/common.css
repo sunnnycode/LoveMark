@@ -1,0 +1,49 @@
+body.hold{overflow: hidden;}
+body,#header{max-width: 750px;margin: 0 auto;}
+img{max-width: 100%;}
+
+#wrap{padding-top: 60px;}
+#container{margin: 0 10px 0;min-height: 300px;}
+
+#mask{width: 100%;height: 100%;position: fixed;background: rgba(0,0,0,0.7);top:0;left:0;z-index: 9999;display: none;}
+#mask.on{display: block;}
+#mask.on.search{z-index: 9998;}
+#mask i{color: #fff;position: absolute;right:10px;top:15px;font-size: 16px;}
+
+#zipcodeLayer{z-index: 9999 !important;}
+
+#authssl_loadingbar{}
+#authssl_loadingbar > div:nth-child(1){z-index: 10000 !important;}
+#authssl_loadingbar_layer{border: 1px solid #dedede;border-radius: 10px;box-shadow: none !important;z-index: 10001 !important;}
+#authssl_loadingbar_layer {}
+#authssl_loadingbar_layer  > p{}
+#authssl_loadingbar_layer  > p > strong{color: #000 !important;}
+
+#NaverChk_Button{margin:10px 0;}
+/* #NaverChk_Button > div{width: 100% !important;}
+#NaverChk_Button > div > div{background: none !important;} */
+
+.if-wr{position: relative;width: 100%;height: auto;padding-bottom: 56.25%;}
+.if-wr iframe{position: absolute;top:0;left: 0;width: 100%;height: 100%;}
+
+.tabs{margin: 0px;padding: 0px;list-style: none;}
+.tabs li{display: inline-block;cursor: pointer;}
+.tabs li.current{}
+.tab-content{display: none;}
+.tab-content.current{display: inherit;}
+
+.help{margin: 30px 0 50px;color: #999;font-size: 9px;}
+.help > p{font-size: 10px;color: #000;margin-bottom: 10px;}
+
+.xans-layout-mobileaction{display: none;}
+
+* .smart-banner-bx-wrapper .bx-pager.bx-default-pager a{height: 2px;border-radius: 0;margin: 0;min-width: 40px;width: auto;background: #fff;opacity: 0.25;}
+* .smart-banner-bx-wrapper .bx-pager.bx-default-pager a:hover,body .smart-banner-bx-wrapper .bx-pager.bx-default-pager a.active,body .smart-banner-bx-wrapper .bx-pager.bx-default-pager a:focus{background: #fff;opacity: 1;}
+
+.time-count{display: none;}
+.time-count > div{display: flex;align-items: center;justify-content: center;font-size: 14px;line-height: 1;background: #000;color: #fff;padding: 5px 0;box-sizing: border-box;margin-bottom: 10px;border-radius: 5px;}
+.time-count > div > span{margin: 0 3px;}
+
+/* 상품 리스트 - 장바구니 옵션 레이어 */
+#capp-shop-new-product-optionselect-backlayer{background:#000;display: none !important;}
+#capp-shop-new-product-optionselect-layer{position: fixed !important;width: 100% !important;height: 100vh !important;top:0 !important;left: 0 !important;margin: 0 !important;}

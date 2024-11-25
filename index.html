@@ -1,0 +1,288 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<div class="main-wr">
+    <!-- main-slide : 메인 상단 슬라이드 배너 -->
+    <!-- 링크 변경 방법 : a href="원하는 주소" -->
+    <!-- 이미지 변경 방법 : img src="파일업로드 주소" -->
+    <div class="main-slide swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="#"><img src="/web/img/mo/main-visual1.jpg" alt="" /></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="#"><img src="/web/img/mo/main-visual2.jpg" alt="" /></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="#"><img src="/web/img/mo/main-visual1.jpg" alt="" /></a>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- main-product-01 : MD의 픽 -->
+    <div class="main-product-01">
+        <div>
+            <div module="product_listmain_1" class="ec-base-product">
+                <div class="title_box">
+                    <div>
+                        <h1>{$category_title_text} 🤩</h1>
+                        <p>MD가 추천하는 상품</p>
+                    </div>
+
+                    <a href="#n" class="more_btn">
+                        <span>더보기</span>
+                        <i class="xi-angle-right"></i>
+                    </a>
+                </div>
+                <ul class="prdList grid2">
+                    <!-- 
+                        $count = 4
+                     -->
+                    <!--@import(/_ms/inc/prdList.html)-->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- main-product-02 : 미니멀웍스 : 브랜드 상품-->
+    <div class="main-product-02">
+        <div>
+            <div class="flex-wr">
+                <a href="#n" class="img-area" style="background-image: url('/web/img/pc/prd01.png')"></a>
+                <div module="product_listmain_4" class="ec-base-product">
+                    <div class="title_box">
+                        <h1>{$category_title_text}</h1>
+                        <p>젊고 감각적인 브랜드의 등장!</p>
+                    </div>
+                    <ul class="prdList grid2">
+                        <!-- 
+                            $count = 2
+                         -->
+                        <!--@import(/_ms/inc/prdList.html)-->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-wr">
+                <a href="#n" class="img-area" style="background-image: url('/web/img/pc/prd02.png')"></a>
+                <div module="product_listmain_5" class="ec-base-product">
+                    <div class="title_box">
+                        <h1>{$category_title_text}</h1>
+                        <p>젊고 감각적인 브랜드의 등장!</p>
+                    </div>
+                    <ul class="prdList grid2">
+                        <!-- 
+                            $count = 2
+                         -->
+                        <!--@import(/_ms/inc/prdList.html)-->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-wr">
+                <a href="#n" class="img-area" style="background-image: url('/web/img/pc/prd03.png')"></a>
+                <div module="product_listmain_6" class="ec-base-product">
+                    <div class="title_box">
+                        <h1>{$category_title_text}</h1>
+                        <p>젊고 감각적인 브랜드의 등장!</p>
+                    </div>
+                    <ul class="prdList grid2">
+                        <!-- 
+                            $count = 2
+                         -->
+                        <!--@import(/_ms/inc/prdList.html)-->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-wr">
+                <a href="#n" class="img-area" style="background-image: url('/web/img/pc/prd04.png')"></a>
+                <div module="product_listmain_7" class="ec-base-product">
+                    <div class="title_box">
+                        <h1>{$category_title_text}</h1>
+                        <p>젊고 감각적인 브랜드의 등장!</p>
+                    </div>
+                    <ul class="prdList grid2">
+                        <!-- 
+                            $count = 2
+                         -->
+                        <!--@import(/_ms/inc/prdList.html)-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- banner__slide : 중간 슬라이드 배너 -->
+    <div class="banner__slide">
+        <div>
+            <div class="swiper2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#n"><img src="/web/img/mo/banner02.jpg" alt="" /></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#n"><img src="/web/img/mo/banner02.jpg" alt="" /></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#n"><img src="/web/img/mo/banner02.jpg" alt="" /></a>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- main-product-03 : 주간 BEST -->
+    <div class="main-product-03">
+        <div>
+            <div module="product_listmain_2" class="ec-base-product">
+                <div class="title_box">
+                    <div>
+                        <h1>{$category_title_text} 🤩</h1>
+                        <p>캠핑그린의 주간 베스트 상품</p>
+                    </div>
+
+                    <a href="#n" class="more_btn">
+                        <span>더보기</span>
+                        <i class="xi-angle-right"></i>
+                    </a>
+                </div>
+                <ul class="prdList grid2">
+                    <!-- 
+                        $count = 4
+                     -->
+                    <!--@import(/_ms/inc/prdList.html)-->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- main-banner -->
+    <div class="main-banner">
+        <div>
+            <a href="#n"><img src="/web/img/mo/banner02.jpg" alt="" /></a>
+        </div>
+    </div>
+
+    <!-- main-product-04 : 신규캠핑장 -->
+    <div class="main-product-04">
+        <div>
+            <div module="product_listmain_3" class="ec-base-product">
+                <div class="title_box">
+                    <div>
+                        <h1>{$category_title_text} 🤩</h1>
+                        <p>캠핑그린의 주간 베스트 상품</p>
+                    </div>
+
+                    <a href="#n" class="more_btn">
+                        <span>더보기</span>
+                        <i class="xi-angle-right"></i>
+                    </a>
+                </div>
+                <ul class="prdList grid2">
+                    <!-- 
+                            $count = 12
+                    -->
+                    <!--@import(/_ms/inc/prdList.html)-->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- main-magazine : 캠핑 매거진  -->
+    <div class="main-magazine">
+        <div class="inner">
+            <div class="title_box">
+                <div>
+                    <h1>캠핑 Magazine🤩</h1>
+                    <p>캠핑그린의 매거진 소식</p>
+                </div>
+
+                <a href="/magazine/list/index.html" class="more_btn">
+                    <span>더보기</span>
+                    <i class="xi-angle-right"></i>
+                </a>
+            </div>
+            <div class="magazineList magazineSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="/magazine/index.html?no=2&board_no=8" style="background-image: url('/web/img/mo/magazine01.jpg')"> </a>
+                        <div class="contents">
+                            <p>
+                                일상에 지친 그대<br />
+                                몸과 마음이 따뜻해지는 시간
+                            </p>
+                            <p>조리도 하고 불멍도 하는 캠핑의 꽃</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a href="/magazine/index.html?no=3&board_no=8" style="background-image: url('/web/img/mo/magazine02.jpg')"> </a>
+                        <div class="contents">
+                            <p>
+                                일상에 지친 그대<br />
+                                몸과 마음이 따뜻해지는 시간
+                            </p>
+                            <p>조리도 하고 불멍도 하는 캠핑의 꽃</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a href="/magazine/index.html?no=4&board_no=8" style="background-image: url('/web/img/mo/magazine03.jpg')"> </a>
+                        <div class="contents">
+                            <p>
+                                일상에 지친 그대<br />
+                                몸과 마음이 따뜻해지는 시간
+                            </p>
+                            <p>조리도 하고 불멍도 하는 캠핑의 꽃</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a href="/magazine/index.html?no=5&board_no=8" style="background-image: url('/web/img/mo/magazine04.jpg')"> </a>
+                        <div class="contents">
+                            <p>
+                                일상에 지친 그대<br />
+                                몸과 마음이 따뜻해지는 시간
+                            </p>
+                            <p>조리도 하고 불멍도 하는 캠핑의 꽃</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a href="/magazine/index.html?no=6&board_no=8" style="background-image: url('/web/img/mo/magazine05.jpg')"> </a>
+                        <div class="contents">
+                            <p>
+                                일상에 지친 그대<br />
+                                몸과 마음이 따뜻해지는 시간
+                            </p>
+                            <p>조리도 하고 불멍도 하는 캠핑의 꽃</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a href="/magazine/index.html?no=7&board_no=8" style="background-image: url('/web/img/mo/magazine06.jpg')"> </a>
+                        <div class="contents">
+                            <p>
+                                일상에 지친 그대<br />
+                                몸과 마음이 따뜻해지는 시간
+                            </p>
+                            <p>조리도 하고 불멍도 하는 캠핑의 꽃</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        #container {
+            margin: 0;
+        }
+    </style>
+
+    <!--@css(/module/main/item.css)-->
+    <!--@js(/module/main/item.js)-->
+</div>

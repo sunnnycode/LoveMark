@@ -1,0 +1,52 @@
+<div class="side-cate">
+    <ul class="tabs">
+        <li class="tab-link current" data-tab="tab-1">카테고리</li>
+        <li class="tab-link" data-tab="tab-2">커뮤니티</li>
+    </ul>
+    <div class="tab-1 tab-content current">
+        <div id="category" module="Layout_category">
+            <div class="position">
+                <ul>
+                    <li id="cate{$cate_no}" data-cate="{$cate_no}"><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+                    <li id="cate{$cate_no}" data-cate="{$cate_no}"><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+                    <li id="cate{$cate_no}" data-cate="{$cate_no}"><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="tab-2 tab-content">
+        <ul>
+            <li>
+                <a href="/board/notice/1/">공지사항</a>
+            </li>
+            <li>
+                <a href="/board/review/4/">실시간 리뷰</a>
+            </li>
+            <li>
+                <a href="/board/qa/6/">Q&amp;A</a>
+            </li>
+
+            <!-- 아래 모듈 게시판은 삭제하지 마세욧!(2300119 김남연) -->
+            <li module="Layout_couponzoneBanner">
+                <a href="/coupon/coupon_zone.html">쿠폰존</a>
+            </li>
+            <!-- 
+            <li module="Layout_calendarBanner">
+                <a href="{$calendar_view_page}">캘린더</a>
+            </li>
+            -->
+            <li module="Layout_attendBanner">
+                <!--
+                    $stamp_type_url = /attend/stamp.html
+                    $comment_type_url = /attend/comment.html
+                -->
+                <a href="{$attend_url}">출석체크</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--@js(/_ms/js/category.js)-->
+
+<!--@css(/module/side_cate/item.css)-->
+<!--@js(/module/side_cate/item.js)-->

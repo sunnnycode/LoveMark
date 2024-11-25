@@ -1,0 +1,37 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/_ms/css/member.css)-->
+
+<div class="titleArea">
+    <h2>FIND PASSWORD</h2>
+</div>
+
+<div module="member_findpasswdmethod">
+    <!--
+        $nextURL = /member/passwd/find_passwd_result.html
+     -->
+    <div class="title">
+        <h3>임시 비밀번호 전송</h3>
+    </div>
+    <div>
+        <div class="form-block t1">
+            <p>임시 비밀번호</p>
+            <div>{$form.passwd_method_type}</div>
+        </div>
+        <div id="{$passwd_method_email_info}" class="form-block t2">
+            <p>이메일</p>
+            <div>{$passwd_method_email}</div>
+        </div>
+        <div id="{$passwd_method_mobile_info}" class="form-block t3">
+            <p>휴대폰 번호</p>
+            <div>{$passwd_method_mobile}</div>
+        </div>
+    </div>
+    <a href="#none" onclick="{$action_func_find_passwd_send}">SUBMIT</a>
+    <a href="#none" onclick="{$action_func_find_passwd_cancel}">취소</a>
+</div>
+
+<style>
+    #container {
+        margin: 0;
+    }
+</style>

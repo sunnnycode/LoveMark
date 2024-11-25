@@ -1,0 +1,530 @@
+<!--@layout(/layout/basic/popup.html)-->
+<!--@css(/css/module/product/detail.css)-->
+<!--@css(/module/detail/item.css)-->
+
+<!--@css(/_ms/css/layer.css)-->
+<!--@css(/_ms/css/option.css)-->
+
+<div module="Product_OptionSelectLayer" class="ec-base-layer">
+    <div class="layer-bg close"></div>
+    <div module="product_detail" class="basket-layer">
+        <div class="top">
+            <p>옵션 선택</p>
+            <span class="close"></span>
+        </div>
+        <div class="sec_01">
+            <div class="img-wr">
+                <img src="{$big_img}" alt="{$seo_alt_tag}" class="{$big_img_class} {$img_display|display}" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image: url('{$icon_url}')"></span></span>
+            </div>
+            <div class="text-wr">
+                <h2 class="name">{$name}</h2>
+                <div class="summary_desc">{$summary_desc}</div>
+            </div>
+        </div>
+        <div class="sec_02 detailArea">
+            <div class="infoArea">
+                <div class="ec-base-table gClearCell {$regular_delivery_display|display}">
+                    <table border="1">
+                        <colgroup>
+                            <col style="width: 100px" />
+                            <col style="width: auto" />
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">구매방법</th>
+                                <td>
+                                    <label>{$regular_deliveryF}1회구매</label>
+                                    <label>{$regular_deliveryT}정기배송</label>
+                                </td>
+                            </tr>
+                            <tr class="{$regular_cycle_period|display}" id="{$regular_cycle_period_id}">
+                                <td colspan="2" class="shippingCycle">
+                                    <strong class="title">배송주기</strong>
+                                    <div class="button" module="product_regularPeriod">
+                                        <label class="gLabel">{$item_form}<span class="txt">{$item_content}</span></label>
+                                        <label class="gLabel">{$item_form}<span class="txt">{$item_content}</span></label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="ec-base-table typeWrite gClearCell">
+                    <table border="1" module="product_option">
+                        <caption>
+                            상품 옵션
+                        </caption>
+                        <colgroup>
+                            <col style="width: 100px" />
+                            <col style="width: auto" />
+                        </colgroup>
+                        <tbody>
+                            <tr class="{$delvtype_display|display}">
+                                <th scope="row">배송</th>
+                                <td class="middle">
+                                    <label>{$form.delvtypeA}국내배송</label>
+                                    <label>{$form.delvtypeB}해외배송</label>
+                                </td>
+                            </tr>
+                            <tr module="product_addoption">
+                                <th scope="row">{$add_option_name}</th>
+                                <td class="middle">
+                                    {$form.add_option}
+                                    <span class="byte" title="현재글자수/최대글자수">[ <strong class="length">0</strong> / {$option_maxlength} ]</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody module="product_option">
+                            <tr>
+                                <th scope="row">{$option_name}</th>
+                                <td class="middle">
+                                    {$form.option}
+                                    <p class="value">{$option_desc}</p>
+                                </td>
+                            </tr>
+                            <tr module="product_quantity" class="quantity">
+                                <th scope="row">수량</th>
+                                <td>
+                                    <div class="ec-base-qty">
+                                        <img class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" />
+                                        {$form.quantity}
+                                        <img class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" />
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr class="{$option_push_button_display|display}" id="{$option_push_button_id}">
+                                <td colspan="2" class="selectButton">
+                                    <button type="button" class="btnStrong" onclick="{$action_push_button}">옵션 선택</button>
+                                </td>
+                            </tr>
+                            <tr module="product_fileoption">
+                                <th scope="row">{$file_option_name}</th>
+                                <td class="fileInfo">
+                                    {$form.file_option}
+                                    <ul class="ec-base-help typeDash">
+                                        <li>파일은 최대 5개까지 {$file_option_limit}M 이하로 개별업로드 가능합니다.</li>
+                                        <li>동일상품이 장바구니에 있을 경우 현재 업로드 되는 파일로 교체됩니다.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <!-- 다중선택형 -->
+                            <tr class="quantity {$quantity_display|display}">
+                                <th scope="row">수량</th>
+                                <td>
+                                    <div class="ec-base-qty">
+                                        <img class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" />
+                                        {$form.quantity}
+                                        <img class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- 단일선택형 -->
+                            <tr module="product_quantity" class="quantity">
+                                <th scope="row">수량</th>
+                                <td>
+                                    <div class="ec-base-qty">
+                                        <img class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" />
+                                        {$form.quantity}
+                                        <img class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" />
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!--@import(/coupon/coupon_productdetail.html)-->
+
+                <div class="sizeGuide {$size_guide_display|display}">
+                    <a href="#none" class="{$size_guide_class}" product_no="{$product_no}">사이즈 가이드</a>
+                </div>
+
+                <div class="productSet ec-base-fold theme1 selected eToggle" module="product_setproduct">
+                    <div class="title">
+                        <h2>세트상품</h2>
+                    </div>
+                    <div class="contents">
+                        <ul class="product">
+                            <li>
+                                <div class="information">
+                                    <div class="thumbnail">
+                                        <a href="/product/detail.html?product_no={$product_no}"><img src="{$product_image}" alt="" id="{$image_id}" /></a>
+                                    </div>
+                                    <p class="name">
+                                        {$product_name}
+                                        <span class="qty {$set_quantity_display|display}">({$set_quantity}개씩 구매되는 상품)</span>
+                                    </p>
+                                    <p class="price {$product_price_del}">{$product_price}<span id="span_product_tax_type_text">{$product_tax_type_text}</span></p>
+                                    <p class="salePrice {$product_sale_price_display|display}">{$product_sale_price}</p>
+                                    <div class="stock">
+                                        <span class="ec-base-label {$stock_quantity_display|display}"><a href="#none" class="btnNormal mini" {$bind_stock_quantity}>재고수량보기</a></span>
+                                        <span class="{$product_restock_button_display|display}"><a href="#none" class="btnNormal mini" {$product_restock_link}>재입고 알림 SMS</a></span>
+                                    </div>
+                                </div>
+                                <div class="option">
+                                    <table border="1" summary="">
+                                        <caption>
+                                            옵션 정보
+                                        </caption>
+                                        <colgroup>
+                                            <col style="width: 105px" />
+                                            <col style="width: auto" />
+                                        </colgroup>
+                                        <tbody>
+                                            <tr module="product_addoption">
+                                                <th scope="row">{$add_option_name}</th>
+                                                <td>
+                                                    {$form.add_option}
+                                                    <span class="byte" title="현재글자수/최대글자수">[ <strong class="length">0</strong> / {$option_maxlength} ]</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody module="product_option">
+                                            <tr>
+                                                <th scope="row">{$option_name}</th>
+                                                <td>
+                                                    {$form.option}
+                                                    <p class="value">{$option_desc}</p>
+                                                </td>
+                                            </tr>
+                                            <tr module="product_quantity" class="quantity">
+                                                <th scope="row">수량</th>
+                                                <td>
+                                                    <div class="ec-base-qty">
+                                                        <img class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" />
+                                                        {$form.quantity}
+                                                        <img class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" />
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody module="product_noneoption">
+                                            <tr>
+                                                <th scope="row">상품선택</th>
+                                                <td>{$form.noneoption}</td>
+                                            </tr>
+                                            <tr module="product_quantity" class="quantity">
+                                                <th scope="row">수량</th>
+                                                <td>
+                                                    <div class="ec-base-qty">
+                                                        <img class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" />
+                                                        {$form.quantity}
+                                                        <img class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" />
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="selectButton {$add_option_push_button_display|display}" id="{$add_option_push_button_id}">
+                                    <button type="button" class="btnStrong" onclick="{$add_action_push_button}">옵션 선택</button>
+                                </div>
+                                <div class="description eToggle" id="eDescriptionToggle_{$product_no}">
+                                    <div class="ec-base-button gCenter">
+                                        <button type="button" class="btnBasic icoToggle eProductDetailInfo" id="eProductDetailInfo_{$product_no}">
+                                            <span>상품 추가정보 보기</span>
+                                        </button>
+                                    </div>
+                                    <div class="inner" id="product_description_{$product_no}"></div>
+                                </div>
+                                <div class="sizeGuide {$size_guide_display|display}">
+                                    <a href="#none" class="{$size_guide_class}" product_no="{$product_no}">사이즈 가이드</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="information">
+                                    <div class="thumbnail">
+                                        <a href="/product/detail.html?product_no={$product_no}"><img src="{$product_image}" alt="" id="{$image_id}" /></a>
+                                    </div>
+                                    <p class="name">
+                                        {$product_name}
+                                        <span class="qty {$set_quantity_display|display}">({$set_quantity}개씩 구매되는 상품)</span>
+                                    </p>
+                                    <p class="price {$product_price_del}">{$product_price}<span id="span_product_tax_type_text">{$product_tax_type_text}</span></p>
+                                    <p class="salePrice {$product_sale_price_display|display}">{$product_sale_price}</p>
+                                    <div class="stock">
+                                        <span class="ec-base-label {$stock_quantity_display|display}"><a href="#none" class="btnNormal mini" {$bind_stock_quantity}>재고수량보기</a></span>
+                                        <span class="{$product_restock_button_display|display}"><a href="#none" class="btnNormal mini" {$product_restock_link}>재입고 알림 SMS</a></span>
+                                    </div>
+                                </div>
+                                <div class="option">
+                                    <table border="1" summary="">
+                                        <caption>
+                                            옵션 정보
+                                        </caption>
+                                        <colgroup>
+                                            <col style="width: 105px" />
+                                            <col style="width: auto" />
+                                        </colgroup>
+                                        <tbody>
+                                            <tr module="product_addoption">
+                                                <th scope="row">{$add_option_name}</th>
+                                                <td>
+                                                    {$form.add_option}
+                                                    <span class="byte" title="현재글자수/최대글자수">[ <strong class="length">0</strong> / {$option_maxlength} ]</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody module="product_option">
+                                            <tr>
+                                                <th scope="row">{$option_name}</th>
+                                                <td>
+                                                    {$form.option}
+                                                    <p class="value">{$option_desc}</p>
+                                                </td>
+                                            </tr>
+                                            <tr module="product_quantity" class="quantity">
+                                                <th scope="row">수량</th>
+                                                <td>
+                                                    <div class="ec-base-qty">
+                                                        <img class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" />
+                                                        {$form.quantity}
+                                                        <img class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" />
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody module="product_noneoption">
+                                            <tr>
+                                                <th scope="row">상품선택</th>
+                                                <td>{$form.noneoption}</td>
+                                            </tr>
+                                            <tr module="product_quantity" class="quantity">
+                                                <th scope="row">수량</th>
+                                                <td>
+                                                    <div class="ec-base-qty">
+                                                        <img class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" />
+                                                        {$form.quantity}
+                                                        <img class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" />
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="selectButton {$add_option_push_button_display|display}" id="{$add_option_push_button_id}">
+                                    <button type="button" class="btnStrong" onclick="{$add_action_push_button}">옵션 선택</button>
+                                </div>
+                                <div class="description eToggle" id="eDescriptionToggle_{$product_no}">
+                                    <div class="ec-base-button gCenter">
+                                        <button type="button" class="btnBasic icoToggle eProductDetailInfo" id="eProductDetailInfo_{$product_no}">
+                                            <span>상품 추가정보 보기</span>
+                                        </button>
+                                    </div>
+                                    <div class="inner" id="product_description_{$product_no}"></div>
+                                </div>
+                                <div class="sizeGuide {$size_guide_display|display}">
+                                    <a href="#none" class="{$size_guide_class}" product_no="{$product_no}">사이즈 가이드</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <dl module="product_quantity" class="quantity set">
+                            <dt>수량</dt>
+                            <dd>
+                                <div class="ec-base-qty">
+                                    <img class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" />
+                                    {$form.quantity}
+                                    <img class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" />
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="productSet ec-base-fold theme1 selected eToggle" module="product_addproduct">
+                    <div class="title">
+                        <span>추가상품<i class="xi-caret-down"></i></span>
+                    </div>
+                    <div class="contents">
+                        <ul class="product">
+                            <li>
+                                <div class="information">
+                                    <div class="thumbnail">
+                                        <a href="/product/detail.html?product_no={$product_no}"><img src="{$product_image}" alt="" id="{$image_id}" /></a>
+                                    </div>
+                                    <p class="name">{$product_name}</p>
+                                    <p class="price {$product_price_del}">{$product_price}<span id="span_product_tax_type_text">{$product_tax_type_text}</span></p>
+                                    <p class="salePrice {$product_sale_price_display|display}">{$product_sale_price}</p>
+                                </div>
+                                <div class="option">
+                                    <table border="1" summary="">
+                                        <caption>
+                                            옵션 정보
+                                        </caption>
+                                        <colgroup>
+                                            <col style="width: 105px" />
+                                            <col style="width: auto" />
+                                        </colgroup>
+                                        <tbody>
+                                            <tr module="product_addoption">
+                                                <th scope="row">{$add_option_name}</th>
+                                                <td>
+                                                    {$form.add_option}
+                                                    <span class="byte" title="현재글자수/최대글자수">[ <strong class="length">0</strong> / {$option_maxlength} ]</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody module="product_option">
+                                            <tr>
+                                                <th scope="row">{$option_name}</th>
+                                                <td>
+                                                    {$form.option}
+                                                    <p class="value">{$option_desc}</p>
+                                                </td>
+                                            </tr>
+                                            <tr module="product_quantity" class="quantity">
+                                                <th scope="row">수량</th>
+                                                <td>
+                                                    <div class="ec-base-qty">
+                                                        <img class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" />
+                                                        {$form.quantity}
+                                                        <img class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" />
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody module="product_noneoption">
+                                            <tr>
+                                                <th scope="row">상품선택</th>
+                                                <td>{$form.noneoption}</td>
+                                            </tr>
+                                            <tr module="product_quantity" class="quantity">
+                                                <th scope="row">수량</th>
+                                                <td>
+                                                    <div class="ec-base-qty">
+                                                        <img class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" />
+                                                        {$form.quantity}
+                                                        <img class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" />
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="selectButton {$add_option_push_button_display|display}" id="{$add_option_push_button_id}">
+                                    <button type="button" class="btnStrong" onclick="{$add_action_push_button}">옵션 선택</button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="information">
+                                    <div class="thumbnail">
+                                        <a href="/product/detail.html?product_no={$product_no}"><img src="{$product_image}" alt="" id="{$image_id}" /></a>
+                                    </div>
+                                    <p class="name">{$product_name}</p>
+                                    <p class="price {$product_price_del}">{$product_price}<span id="span_product_tax_type_text">{$product_tax_type_text}</span></p>
+                                    <p class="salePrice {$product_sale_price_display|display}">{$product_sale_price}</p>
+                                </div>
+                                <div class="option">
+                                    <table border="1" summary="">
+                                        <caption>
+                                            옵션 정보
+                                        </caption>
+                                        <colgroup>
+                                            <col style="width: 105px" />
+                                            <col style="width: auto" />
+                                        </colgroup>
+                                        <tbody>
+                                            <tr module="product_addoption">
+                                                <th scope="row">{$add_option_name}</th>
+                                                <td>
+                                                    {$form.add_option}
+                                                    <span class="byte" title="현재글자수/최대글자수">[ <strong class="length">0</strong> / {$option_maxlength} ]</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody module="product_option">
+                                            <tr>
+                                                <th scope="row">{$option_name}</th>
+                                                <td>
+                                                    {$form.option}
+                                                    <p class="value">{$option_desc}</p>
+                                                </td>
+                                            </tr>
+                                            <tr module="product_quantity" class="quantity">
+                                                <th scope="row">수량</th>
+                                                <td>
+                                                    <div class="ec-base-qty">
+                                                        <img class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" />
+                                                        {$form.quantity}
+                                                        <img class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" />
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody module="product_noneoption">
+                                            <tr>
+                                                <th scope="row">상품선택</th>
+                                                <td>{$form.noneoption}</td>
+                                            </tr>
+                                            <tr module="product_quantity" class="quantity">
+                                                <th scope="row">수량</th>
+                                                <td>
+                                                    <div class="ec-base-qty">
+                                                        <img class="{$quantity_down_class}" alt="down" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_down.jpg" width="33" height="29" />
+                                                        {$form.quantity}
+                                                        <img class="{$quantity_up_class}" alt="up" src="//img.echosting.cafe24.com/skin/mobile/common/ico_quantity_up.jpg" width="33" height="29" />
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="selectButton {$add_option_push_button_display|display}" id="{$add_option_push_button_id}">
+                                    <button type="button" class="btnStrong" onclick="{$add_action_push_button}">옵션 선택</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="{$total.total_id}" class="{$total.total_display|display}">
+                    <table border="1" summary="">
+                        <caption>
+                            상품 목록
+                        </caption>
+                        <colgroup>
+                            <col style="width: auto" />
+                            <col style="width: 100px" />
+                            <col style="width: 35px" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">상품 정보</th>
+                                <th scope="col">가격</th>
+                                <th scope="col">삭제</th>
+                            </tr>
+                        </thead>
+                        <!-- 옵션선택 또는 세트상품 선택시 상품이 추가되는 영역입니다. 쇼핑몰 화면에는 아래와 같은 마크업구조로 표시됩니다. 삭제시 기능이 정상동작 하지 않습니다. -->
+                        <tbody>
+                            <!-- 상품 목록 -->
+                        </tbody>
+                        <!-- // 옵션선택 또는 세트상품 선택시 상품이 추가되는 영역입니다. 쇼핑몰 화면에는 아래와 같은 마크업구조로 표시됩니다. 삭제시 기능이 정상동작 하지 않습니다. -->
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="sec_03">
+            <div id="{$total.total_price_id}" class="totalPrice">
+                <strong>총 상품 금액</strong>
+                <span class="{$total.total_cnt}"
+                    ><strong><em>0원</em></strong></span
+                >
+            </div>
+            <div class="ec-base-button" module="product_action">
+                <a href="#none" class="{$buy_display|display}" onclick="{$action_buy}">
+                    <span id="{$btn_buy_id}">구매하기</span>
+                    <span id="{$btn_reserve_id}" class="{$btn_reserve_class|display}">예약주문하기</span>
+                </a>
+                <a href="#none" class="{$basket_display|display}" onclick="{$action_basket}">장바구니</a>
+
+                <!-- 네이버 체크아웃 구매 버튼 -->
+                <div id="NaverChk_Button"></div>
+                <!-- 카카오페이 구매 버튼 -->
+                <div id="{$app_payment_button_box_id}"></div>
+            </div>
+        </div>
+    </div>
+</div>

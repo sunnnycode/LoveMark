@@ -1,0 +1,31 @@
+.side-cate{position:fixed;top:0;bottom:0;left:-90%;z-index: 10001;background: #fff;width: 90%;height:auto;padding: 30px 25px 30px;box-sizing: border-box;transition: all 0.4s;overflow:auto;}
+.side-cate.on{left: 0;height: auto;overflow-y: scroll;}
+
+.side-cate .tabs{margin: 0px;padding: 0px;list-style: none;overflow: hidden;}
+.side-cate .tabs li{color: #ccc;float: left;padding: 10px 8px;cursor: pointer;font-size: 16px;font-weight: 400;width: 50%;box-sizing: border-box;text-align: center;border-bottom: 2px solid #dedede;}
+.side-cate .tabs li.current{color: var(--point);font-weight: 500;border-bottom: 2px solid var(--point);}
+.side-cate .tab-content{display: none;padding: 30px 0;margin-bottom: 20px;}
+.side-cate .tab-content.current{display: inherit;}
+.side-cate .tab-content > ul{}
+.side-cate .tab-content > ul li{font-size: 20px;line-height: 1;margin-bottom: 25px; font-weight: 600;}
+
+.side-cate .cate_info{font-size: 13px;line-height: 20px;margin-bottom: 20px;color: #999;}
+.side-cate .cate_info .tit{margin-bottom: 10px;color: #000;font-weight: 500;}
+.side-cate .cate_info span{display: block;}
+
+#category{}
+#category .position{}
+#category .position > ul{}
+#category .position > ul ul{display: none;}
+#category .position > ul > li{margin-bottom: 25px;font-size: 20px;line-height: 1; font-weight: 600;}
+#category .position > ul > li > ul{padding-left: 30px;box-sizing: border-box;}
+#category .position > ul > li > ul > li{font-size: 18px; font-weight: 500; margin-top: 20px;}
+#category .position > ul > li > ul > li > ul{padding-left: 15px; box-sizing: border-box;}
+#category .position > ul > li > ul > li > ul > li{ margin-top: 15px;}
+#category .position > ul > li > ul > li > ul > li > ul{}
+#category .position > ul > li > ul > li > ul > li > ul > li{padding-left: 8px;box-sizing: border-box;}
+
+#category .position li{position: relative;}
+#category .position span{position: absolute;width: 20px;height: 100%;display: block;top:0;right: 0;text-align: center;font-size: 20px;}
+#category .position span::after{content: '+';}
+#category .position span.on::after{content: '-';}

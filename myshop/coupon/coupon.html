@@ -1,0 +1,80 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/myshop/src/myshop.css)-->
+<div class="titleArea" module="custom_moduleedit_101">
+    <h2>쿠폰 내역</h2>
+</div>
+
+<div module="myshop_CouponSerial">
+    <div>
+        <!--
+            $login_page_url = /member/login.html
+        -->
+        <h3>쿠폰번호 등록</h3>
+        <fieldset>
+            {$form.coupon_code}
+            <a href="#none" onclick="{$action_coupon_submit}">쿠폰번호 인증</a>
+        </fieldset>
+        <p>-반드시 쇼핑몰에서 발행한 쿠폰번호만 입력해주세요.<br />(10~35자 일련번호 "-" 제외)</p>
+    </div>
+</div>
+
+<div module="myshop_CouponList">
+    <!--
+        $product_list_url = coupon_product_list.html
+    -->
+    <div class="title">
+        <h3>마이쿠폰</h3>
+        <span>{$coupon_count}개</span>
+    </div>
+    <div class="{$display_coupon_list|display}">
+        <div class="coupon-info">
+            <div class="input">{$coupon_no}</div>
+            <div class="a1">{$coupon_name}</div>
+            <div class="a2">{$coupon_start_end_date}</div>
+            <div class="a3">적용상품 : {$coupon_use_product_icon}</div>
+            <div class="a4">구매금액 : {$coupon_use_price}</div>
+            <div class="a5 {$display_paymethod|display}">쿠폰 혜택 : {$coupon_paymethod}</div>
+            <div class="a6">결제수단 : {$coupon_benefit_result}</div>
+        </div>
+        <div class="coupon-info">
+            <div class="input">{$coupon_no}</div>
+            <div class="a1">{$coupon_name}</div>
+            <div class="a2">{$coupon_start_end_date}</div>
+            <div class="a3">적용상품 : {$coupon_use_product_icon}</div>
+            <div class="a4">구매금액 : {$coupon_use_price}</div>
+            <div class="a5 {$display_paymethod|display}">쿠폰 혜택 : {$coupon_paymethod}</div>
+            <div class="a6">결제수단 : {$coupon_benefit_result}</div>
+        </div>
+    </div>
+    <div class="{$display_no_coupon_list|display}">
+        <p class="message">보유하고 계신 쿠폰 내역이 없습니다</p>
+    </div>
+
+    <div class="btn {$coupon_mileage_display|display}">
+        <a href="#none" onclick="COUPON.useCoupon()">사용하기</a>
+    </div>
+</div>
+
+<div module="myshop_CouponListPaging" class="ec-base-paginate">
+    <a href="{$first_url}" class="first"><img src="/web/img/common/page_first.png" alt="첫 페이지" /></a>
+    <a href="{$prev_url}"><img src="/web/img/common/page_prev.png" alt="이전 페이지" /></a>
+    <ol>
+        <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
+        <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
+        <li><a href="{$url_query}" class="{$param_class}">{$n}</a></li>
+    </ol>
+    <a href="{$next_url}"><img src="/web/img/common/page_next.png" alt="다음 페이지" /></a>
+    <a href="{$last_url}" class="last"><img src="/web/img/common/page_last.png" alt="마지막 페이지" /></a>
+</div>
+
+<div module="custom_moduleedit_102" class="help">
+    <p>쿠폰 이용 안내</p>
+    <div>
+        <ol>
+            <li>쿠폰인증번호 등록하기에서 쇼핑몰에서 발행한 종이쿠폰/시리얼쿠폰/모바일쿠폰 등의 인증번호를 등록하시면 온라인쿠폰으로 발급되어 사용이 가능합니다.</li>
+            <li>쿠폰은 주문 시 1회에 한해 적용되며, 1회 사용 시 재 사용이 불가능합니다.</li>
+            <li>쿠폰은 적용 가능한 상품이 따로 적용되어 있는 경우 해당 상품 구매 시에만 사용이 가능합니다.</li>
+            <li>특정한 종이쿠폰/시리얼쿠폰/모바일쿠폰의 경우 단 1회만 사용이 가능할 수 있습니다.</li>
+        </ol>
+    </div>
+</div>

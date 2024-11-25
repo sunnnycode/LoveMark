@@ -1,0 +1,64 @@
+<!--@layout(/layout/basic/layout.html)-->
+<div class="gallery-wr">
+    <div module="Board_ListPackage_8">
+        <ul module="board_list_8">
+            <!--
+                $count = 
+                $product_name_cut = 30
+                $login_page_url = /member/login.html
+                $deny_access_url = /index.html
+            -->
+            <li class="item">
+                <div onclick="window.location.href='/gallery/read.html{$param_read}'">
+                    <div class="thumbnail">
+                        <span class="thumb">
+                            <img src="{$img_src|replace:/gallery,/}" />
+                        </span>
+                    </div>
+                    <div class="description">
+                        <p class="subject">{$subject}</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item">
+                <div onclick="window.location.href='/gallery/read.html{$param_read}'">
+                    <div class="thumbnail">
+                        <span class="thumb">
+                            <img src="{$img_src|replace:/gallery,/}" />
+                        </span>
+                    </div>
+                    <div class="description">
+                        <p class="subject">{$subject}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<style>
+    #container {
+        width: 100%;
+        padding: 0 3%;
+        box-sizing: border-box;
+    }
+    .gallery-wr {
+    }
+    .gallery-wr ul {
+        overflow: hidden;
+    }
+    .gallery-wr ul > li {
+        float: left;
+        text-align: center;
+        margin-bottom: 8%;
+        cursor: pointer;
+        font-size: 14px;
+    }
+    .gallery-wr ul > li img {
+        width: 100%;
+    }
+    .gallery-wr ul > li .description {
+        margin-top: 10px;
+        text-align: left;
+    }
+</style>

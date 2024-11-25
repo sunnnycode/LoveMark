@@ -1,0 +1,85 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/_ms/css/member.css)-->
+<div class="titleArea">
+    <h2>FIND PASSWORD</h2>
+</div>
+
+<div module="member_findpasswd">
+    <!--
+        $nextURL = /member/passwd/find_passwd_question.html
+     -->
+    <div class="title">
+        <h3>비밀번호 찾기</h3>
+    </div>
+    <div class="findFw">
+        <div class="form-block t1">
+            <p>회원유형</p>
+            <div class="member">{$form.searchType}</div>
+            <div class="check">{$form.check_method}</div>
+        </div>
+        <div class="form-block t2">
+            <p>아이디</p>
+            <div>{$form.member_id}</div>
+        </div>
+        <div id="name_view" class="form-block t3 name">
+            <p id="name_lable">이름</p>
+            <div>{$form.name}</div>
+        </div>
+        <div id="ssn_view" class="form-block t4 ssn_no">
+            <p id="ssn_name">법인번호</p>
+            <div>
+                {$form.ssn}
+                <span>(-) 없이 숫자만 입력하세요.</span>
+            </div>
+        </div>
+        <div id="email_view" class="form-block t5 email" style="display: none">
+            <p>이메일</p>
+            <div>{$form.email}</div>
+        </div>
+        <div id="mobile_view" class="form-block t6 mobile" style="display: none">
+            <p>휴대폰 번호</p>
+            <div>{$form.mobile1} - {$form.mobile2} - {$form.mobile3}</div>
+        </div>
+        <div id="ipin_view" class="form-block t7 ipin" style="display: none">
+            <p>아이핀인증으로 찾기</p>
+            <div>
+                <span>회원가입을 아이핀으로 가입하신 회원님께서는 아이핀으로 인증하세요.</span>
+                <a href="#none" onclick="{$action_func_find_passwd_question}">아이핀인증</a>
+            </div>
+        </div>
+        <div id="mobile_auth_view" class="form-block t8 mobileauth" style="display: none">
+            <p>휴대폰인증으로 찾기</p>
+            <div>
+                <span>본인 명의의 휴대폰으로 아이디 찾기를 진행할 수 있습니다. 휴대폰 명의자의 정보로가입한 아이디 찾기가 가능합니다.</span>
+                <a href="#none" onclick="{$action_func_find_passwd_question}">휴대폰 인증</a>
+            </div>
+        </div>
+        <a href="#none" onclick="{$action_func_find_passwd_question}">확인</a>
+    </div>
+</div>
+
+<style>
+    #container {
+        margin: 0;
+    }
+</style>
+
+<script>
+    jq(() => {
+        jq("#searchType").on("change", function () {
+            setTimeout(() => {
+                if (jq("#check_method0").attr("style") == "display: inline;") {
+                    jq("#check_method0").css("display", "inline-block");
+                }
+            }, 1);
+        });
+
+        // input placeholder
+        jq(".findFw > div").each(function () {
+            if (jq(this).find("input").attr("type") == "text") {
+                const placeholder = jq(this).find("> p").text();
+                jq(this).find("input:nth-of-type(1)").attr("placeholder", `${placeholder}`);
+            }
+        });
+    });
+</script>

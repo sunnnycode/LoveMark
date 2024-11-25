@@ -1,0 +1,46 @@
+/* .myshopMain{padding: 0 7px;} */
+/* .xans-myshop-orderstate { margin:14px 0; border:1px solid #4a5164; }
+.xans-myshop-orderstate .title { padding:12px 12px 13px; margin:0; border-bottom:1px solid #d5d5d5; background:#fff; }
+.xans-myshop-orderstate .title h3 { padding:0; font-size:12px; color:#1b1b1b; }
+.xans-myshop-orderstate .desc { padding:0 0 0 4px; font-weight:normal; font-size:11px; color:#757575; }
+.xans-myshop-orderstate .desc em { color:#000; font-style:normal; }
+.xans-myshop-orderstate .state { overflow:hidden; }
+.xans-myshop-orderstate .order { overflow:hidden; padding:18px 0 20px; background:#fff; }
+.xans-myshop-orderstate .order li { float:left; width:25%; padding:0 0 2px; margin:0 0 0 -1px; border-left:1px dotted #c9c7ca; text-align:center; }
+.xans-myshop-orderstate .order li a { display:block; }
+.xans-myshop-orderstate .order li:first-child { border-left:0; }
+.xans-myshop-orderstate .order li strong { display:block; margin:1px 0 13px; font-weight:normal; font-size:11px; color:#353535; }
+.xans-myshop-orderstate .order .count { font-weight:bold; font-size:18px; color:#000; }
+.xans-myshop-orderstate .cs { overflow:hidden; border-top:1px solid #d5d5d5; background:#f7f7f7; }
+.xans-myshop-orderstate .cs li { overflow:hidden; float:left; width:33.3%; margin:0 0 0 -1px; border-left:1px solid #d5d5d5; font-size:11px; background:#f7f7f7; }
+.xans-myshop-orderstate .cs li a { display:block; padding:10px 0; }
+.xans-myshop-orderstate .cs strong { font-weight:normal; color:#1b1b1b; }
+.xans-myshop-orderstate .cs .count { float:right; margin:0 15px 0 0; font-weight:bold; color:#000; }
+.xans-myshop-orderstate .cs .icoDot { display:inline-block; width:2px; height:2px; margin:6px 0 0 12px; background:#52596b; vertical-align:top; } */
+
+.myshopMain{margin-top: 20px;}
+.myshopMain .sec_01{padding: 0;box-sizing: border-box;}
+.myshopMain .sec_01 .myinfo{font-size: 18px;line-height: 1.2;}
+.myshopMain .sec_01 .myinfo li{}
+.myshopMain .sec_01 .myinfo li span{font-weight: 600;}
+.myshopMain .sec_01 .myRecent{background: #252525;color: #fff;font-size: 0;padding: 20px 0 15px;border-radius: 10px;margin: 15px 0;}
+.myshopMain .sec_01 .myRecent li{display: inline-block;width: 33.333%;font-size: 14px;text-align: center;line-height: 1;}
+.myshopMain .sec_01 .myRecent li span{display: block;}
+.myshopMain .sec_01 .myRecent li p{margin-top: 15px;font-size: 18px;font-weight: 300;}
+.myshopMain .sec_01 .myRecent li p a{color: #fff;}
+
+.xans-myshop-orderstate{padding: 0;box-sizing: border-box;margin-top: 30px;}
+.xans-myshop-orderstate .title{font-size: 14px;font-weight: 400;position: relative;}
+.xans-myshop-orderstate .title h3{line-height: 1;font-weight: 400;}
+.xans-myshop-orderstate .title h3 .desc{font-size: 11px;font-weight: 400;}
+.xans-myshop-orderstate .title > p{font-size: 11px;position: absolute;top:0;right: 0;border:1px solid #dedede;padding: 2px 4px;display: none;}
+.xans-myshop-orderstate .title > p a{color: #5c5c5c;}
+
+.xans-myshop-orderstate .state{background: #efefef;padding: 20px 0;margin: 20px 0 20px;border-radius: 10px;}
+.xans-myshop-orderstate .state .order{font-size: 0;font-weight: 400;}
+.xans-myshop-orderstate .state .order li{text-align: center;width: 25%;display: inline-block;font-size: 14px;line-height: 1;position: relative;}
+.xans-myshop-orderstate .state .order li::after{content: '';width: 14px;height: 24px;background: url("/web/img/common/paging_next.png") no-repeat;position: absolute;top: 0;right: -3px;background-size: auto 60%;background-position: top right;}
+.xans-myshop-orderstate .state .order li:last-child::after{display: none;}
+.xans-myshop-orderstate .state .order li a{}
+.xans-myshop-orderstate .state .order li a strong{font-weight: 400;}
+.xans-myshop-orderstate .state .order li a span{display: block;font-size: 20px;margin-top: 20px;}

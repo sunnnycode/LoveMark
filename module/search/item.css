@@ -1,0 +1,22 @@
+.search-area{width: 100%; box-sizing: border-box; background: #fff;padding: 30px 15px 30px;display: none;position: fixed;top:60px;z-index: 9999; border-top: 1px solid rgb(244, 244, 244);}
+
+.search-area .popular{margin-bottom: 20px;}
+.search-area h2{margin-bottom: 10px;border-bottom: 1px solid #000;padding-bottom: 10px;font-size: 18px;}
+.search-area .popular ul{font-size: 0;}
+.search-area .popular ul li{display: inline-block;margin-right: 8px;background: #fff; border: 1px solid var(--point); padding: 3px 5px;border-radius: 3px;margin-bottom: 8px;font-size: 11px;}
+.search-area .popular ul li a{color: var(--point);}
+
+.search-area .recentSearch{margin-top: 20px;}
+
+.search-area .xans-search-recentkeyword{display: block !important;}
+.search-area .xans-search-recentkeyword > p{min-height: 30px;}
+.search-area .xans-search-recentkeyword ul{min-height: 30px; display: flex; flex-wrap: wrap;}
+.search-area .xans-search-recentkeyword ul li{display: flex; align-items: center; gap: 3px; margin-right: 10px;background: #fff; border: 1px solid var(--point); padding: 3px 5px;border-radius: 3px;margin-bottom: 5px;}
+.search-area .xans-search-recentkeyword ul li a {color: var(--point); }
+.search-area .xans-search-recentkeyword ul li i {color: var(--point);}
+.search-area .xans-search-recentkeyword ul li button{font-size: 16px;display: inline-block;vertical-align: middle;margin-top: -2px;}
+.search-area .xans-search-recentkeyword .btnDeleteAll{ border: 0;outline: 0;padding: 5px;margin-top: 10px;border-radius: 3px;font-size: 11px; background-color: var(--mc); color: #fff;}
+.search-area .xans-search-recentkeyword .button {text-align: end;}
+
+.search-area .close_btn {position: absolute;left: 50%;bottom:-20px; transform: translateX(-50%);  width: 40px; height: 40px; line-height: 45px; text-align: center; background-color: var(--mc); border-radius: 50%; box-sizing: border-box;}
+.search-area .close_btn i{font-size: 16px; color: #fff;}

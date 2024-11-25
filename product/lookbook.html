@@ -1,0 +1,29 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<div module="Product_menupackage">
+    <div class="title" module="product_headcategory">
+        <h2><span>{$title_text_or_image}</span></h2>
+    </div>
+</div>
+
+<div module="product_listnormal" class="lb_list">
+    <!--
+        $count = 
+    -->
+    <ul class="prdList">
+        <li class="item">
+            <div class="box">
+                <a href="/product/lookbook_detail.html{$param}"><img src="{$image_big}" alt="" /></a>
+            </div>
+            <p class="name"><a href="/product/lookbook_detail.html{$param}">{$product_name}</a></p>
+            <p class="summary">{$summary_desc}</p>
+        </li>
+        <li class="item">
+            <div class="box">
+                <a href="/product/lookbook_detail.html{$param}"><img src="{$image_big}" alt="" /></a>
+            </div>
+            <p class="name"><a href="/product/lookbook_detail.html{$param}">{$product_name}</a></p>
+            <p class="summary">{$summary_desc}</p>
+        </li>
+    </ul>
+</div>

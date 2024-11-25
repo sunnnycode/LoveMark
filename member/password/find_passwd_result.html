@@ -1,0 +1,39 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/_ms/css/member.css)-->
+
+<div class="titleArea">
+    <h2>FIND PASSWORD</h2>
+</div>
+
+<div module="member_findpasswdresult">
+    <!--@css(/css/module/member/findpasswdresult.css)-->
+
+    <div class="findPw">
+        <div class="desc">
+            <img src="/web/img/common/result_check_ico.png" alt="" />
+            <div class="title">
+                <h3 class="{$display_email_method|display}">임시 비밀번호가 고객님 메일로 전송되었습니다.</h3>
+                <h3 class="{$display_mobile_method|display}">
+                    임시 비밀번호가<br />
+                    고객님 휴대폰 번호로 전송되었습니다.
+                </h3>
+            </div>
+        </div>
+        <div class="inner">
+            <p class="copy">
+                고객님의 비밀번호가 성공적으로 발송되었습니다.<br />
+                항상 고객님의 즐겁고 편리한 쇼핑을 위해<br />
+                최선의 노력을 다하는 쇼핑몰이 되도록 하겠습니다.
+            </p>
+        </div>
+        <div class="ec-base-button gBlank20">
+            <a href="/member/login.html" class="btnLogin_bk">LOGIN</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    #container {
+        margin: 0;
+    }
+</style>

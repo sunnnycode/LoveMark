@@ -1,0 +1,8 @@
+:root {
+    --mainfont: 'Montserrat', 'Pretendard', sans-serif
+}
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+body,html,input,select,textarea{font-family: var(--mainfont);word-break: keep-all;}
+* strong{font-weight: 400;}

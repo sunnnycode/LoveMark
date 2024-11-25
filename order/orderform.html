@@ -1,0 +1,961 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/_ms/css/order.css)-->
+<div class="titleArea">
+    <h2>주문서작성</h2>
+</div>
+
+<div module="Order_form" unroll="1">
+    <!-- 이값은 지우면 안되는 값입니다. ($move_order_after 주문완료페이지 주소 / $move_basket 장바구니페이지 주소)
+        $move_order_after=/order/order_result.html
+        $move_basket=/order/basket.html
+        $paymethod_selector = textButton
+        $product_weight_display=F
+        $delivery_list_type=embeded
+        $isRuleBasedAddrForm = T
+    -->
+
+    <!-- 주문 상품 정보 -->
+    <div class="orderListArea {$default_display|display}">
+        <div class="title toggle-btn">
+            <p>주문상품</p>
+        </div>
+        <div class="order_prd_list">
+            <!-- Order_normallist : 기본배송 -->
+            <ul module="Order_normallist" class="toggle-area">
+                <li>
+                    <div class="a1">
+                        <a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+                    </div>
+                    <div class="right">
+                        <div class="a2">
+                            <p class="name">{$product_name_link}</p>
+                            <ul class="option">
+                                <li>
+                                    <span class="{$option_display|display}">{$option_str}</span>
+                                </li>
+                            </ul>
+                            <ul module="Myshop_optionSet">
+                                <li><span>{$product_name}</span>{$option_str} ({$qty}개)</li>
+                                <li><span>{$product_name}</span>{$option_str} ({$qty}개)</li>
+                            </ul>
+                            <ul class="price">
+                                <li id="{$product_price_div_id}" class="{$discount}">
+                                    <p>{$product_price_front_head}{$product_price_front}<span>{$product_price_front_tail}</span></p>
+                                </li>
+                                <li id="{$product_sale_price_div_id}" class="{$product_sale_price_display|display}">
+                                    <p><span id="{$product_sale_price_front_id}">{$product_sale_price_front}</span></p>
+                                </li>
+                            </ul>
+                            <p class="quantity">수량 {$product_quantity_text}개</p>
+                        </div>
+                        <div class="a3">
+                            <p class="{$subscription_show_display|display}"><span>배송주기</span> <span>{$subscription_option_str}</span></p>
+                            <p class="{$allotment_display|display}">무이자할부 상품</p>
+                            <p class="{$expiration_date_display|display}">유효기간 : {$expiration_date}</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="a1">
+                        <a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+                    </div>
+                    <div class="right">
+                        <div class="a2">
+                            <p class="name">{$product_name_link}</p>
+                            <ul class="option">
+                                <li>
+                                    <span class="{$option_display|display}">{$option_str}</span>
+                                </li>
+                            </ul>
+                            <ul module="Myshop_optionSet">
+                                <li><span>{$product_name}</span>{$option_str} ({$qty}개)</li>
+                                <li><span>{$product_name}</span>{$option_str} ({$qty}개)</li>
+                            </ul>
+                            <ul class="price">
+                                <li id="{$product_price_div_id}" class="{$discount}">
+                                    <p>{$product_price_front_head}{$product_price_front}<span>{$product_price_front_tail}</span></p>
+                                </li>
+                                <li id="{$product_sale_price_div_id}" class="{$product_sale_price_display|display}">
+                                    <p><span id="{$product_sale_price_front_id}">{$product_sale_price_front}</span></p>
+                                </li>
+                            </ul>
+                            <p class="quantity">수량 {$product_quantity_text}개</p>
+                        </div>
+                        <div class="a3">
+                            <p class="{$subscription_show_display|display}"><span>배송주기</span> <span>{$subscription_option_str}</span></p>
+                            <p class="{$allotment_display|display}">무이자할부 상품</p>
+                            <p class="{$expiration_date_display|display}">유효기간 : {$expiration_date}</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!-- // Order_normallist : 기본배송  -->
+
+            <!-- 업체기본배송 -->
+            <ul module="Order_supplierlist">
+                <li>
+                    <div class="a1">
+                        <a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+                    </div>
+                    <div class="right">
+                        <div class="a2">
+                            <p class="name">{$product_name_link}</p>
+                            <ul class="option">
+                                <li>
+                                    <span class="{$option_display|display}">{$option_str}</span>
+                                </li>
+                            </ul>
+                            <ul module="Myshop_optionSet">
+                                <li><span>{$product_name}</span>{$option_str} ({$qty}개)</li>
+                                <li><span>{$product_name}</span>{$option_str} ({$qty}개)</li>
+                            </ul>
+                            <ul class="price">
+                                <li id="{$product_price_div_id}" class="{$discount}">
+                                    <p>{$product_price_front_head}{$product_price_front}<span>{$product_price_front_tail}</span></p>
+                                </li>
+                                <li id="{$product_sale_price_div_id}" class="{$product_sale_price_display|display}">
+                                    <p><span id="{$product_sale_price_front_id}">{$product_sale_price_front}</span></p>
+                                </li>
+                            </ul>
+                            <p class="quantity">수량 {$product_quantity_text}개</p>
+                        </div>
+                        <div class="a3">
+                            <p class="{$subscription_show_display|display}"><span>배송주기</span> <span>{$subscription_option_str}</span></p>
+                            <p class="{$allotment_display|display}">무이자할부 상품</p>
+                            <p class="{$expiration_date_display|display}">유효기간 : {$expiration_date}</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="a1">
+                        <a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+                    </div>
+                    <div class="right">
+                        <div class="a2">
+                            <p class="name">{$product_name_link}</p>
+                            <ul class="option">
+                                <li>
+                                    <span class="{$option_display|display}">{$option_str}</span>
+                                </li>
+                            </ul>
+                            <ul module="Myshop_optionSet">
+                                <li><span>{$product_name}</span>{$option_str} ({$qty}개)</li>
+                                <li><span>{$product_name}</span>{$option_str} ({$qty}개)</li>
+                            </ul>
+                            <ul class="price">
+                                <li id="{$product_price_div_id}" class="{$discount}">
+                                    <p>{$product_price_front_head}{$product_price_front}<span>{$product_price_front_tail}</span></p>
+                                </li>
+                                <li id="{$product_sale_price_div_id}" class="{$product_sale_price_display|display}">
+                                    <p><span id="{$product_sale_price_front_id}">{$product_sale_price_front}</span></p>
+                                </li>
+                            </ul>
+                            <p class="quantity">수량 {$product_quantity_text}개</p>
+                        </div>
+                        <div class="a3">
+                            <p class="{$subscription_show_display|display}"><span>배송주기</span> <span>{$subscription_option_str}</span></p>
+                            <p class="{$allotment_display|display}">무이자할부 상품</p>
+                            <p class="{$expiration_date_display|display}">유효기간 : {$expiration_date}</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!-- //업체기본배송 -->
+
+            <!-- 개별배송 -->
+            <ul module="Order_individuallist">
+                <li>
+                    <div class="a1">
+                        <a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+                    </div>
+                    <div class="right">
+                        <div class="a2">
+                            <p class="name">{$product_name_link}</p>
+                            <ul class="option">
+                                <li>
+                                    <span class="{$option_display|display}">{$option_str}</span>
+                                </li>
+                            </ul>
+                            <ul module="Myshop_optionSet">
+                                <li><span>{$product_name}</span>{$option_str} ({$qty}개)</li>
+                                <li><span>{$product_name}</span>{$option_str} ({$qty}개)</li>
+                            </ul>
+                            <ul class="price">
+                                <li id="{$product_price_div_id}" class="{$discount}">
+                                    <p>{$product_price_front_head}{$product_price_front}<span>{$product_price_front_tail}</span></p>
+                                </li>
+                                <li id="{$product_sale_price_div_id}" class="{$product_sale_price_display|display}">
+                                    <p><span id="{$product_sale_price_front_id}">{$product_sale_price_front}</span></p>
+                                </li>
+                            </ul>
+                            <p class="quantity">수량 {$product_quantity_text}개</p>
+                        </div>
+                        <div class="a3">
+                            <p class="{$subscription_show_display|display}"><span>배송주기</span> <span>{$subscription_option_str}</span></p>
+                            <p class="{$allotment_display|display}">무이자할부 상품</p>
+                            <p class="{$expiration_date_display|display}">유효기간 : {$expiration_date}</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="a1">
+                        <a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+                    </div>
+                    <div class="right">
+                        <div class="a2">
+                            <p class="name">{$product_name_link}</p>
+                            <ul class="option">
+                                <li>
+                                    <span class="{$option_display|display}">{$option_str}</span>
+                                </li>
+                            </ul>
+                            <ul module="Myshop_optionSet">
+                                <li><span>{$product_name}</span>{$option_str} ({$qty}개)</li>
+                                <li><span>{$product_name}</span>{$option_str} ({$qty}개)</li>
+                            </ul>
+                            <ul class="price">
+                                <li id="{$product_price_div_id}" class="{$discount}">
+                                    <p>{$product_price_front_head}{$product_price_front}<span>{$product_price_front_tail}</span></p>
+                                </li>
+                                <li id="{$product_sale_price_div_id}" class="{$product_sale_price_display|display}">
+                                    <p><span id="{$product_sale_price_front_id}">{$product_sale_price_front}</span></p>
+                                </li>
+                            </ul>
+                            <p class="quantity">수량 {$product_quantity_text}개</p>
+                        </div>
+                        <div class="a3">
+                            <p class="{$subscription_show_display|display}"><span>배송주기</span> <span>{$subscription_option_str}</span></p>
+                            <p class="{$allotment_display|display}">무이자할부 상품</p>
+                            <p class="{$expiration_date_display|display}">유효기간 : {$expiration_date}</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!-- // 개별배송 -->
+        </div>
+    </div>
+
+    <!-- //해외배송상품 주문내역 -->
+    <div class="orderArea {$oversea_display|display}">
+        <ul module="Order_individuallist">
+            <li>
+                <div class="a1">
+                    <a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+                </div>
+                <div class="right">
+                    <div class="a2">
+                        <p class="name">{$product_name_link}</p>
+                        <ul class="option">
+                            <li>
+                                <span class="{$option_display|display}">{$option_str}</span>
+                            </li>
+                        </ul>
+                        <ul module="Myshop_optionSet">
+                            <li><span>{$product_name}</span>{$option_str} ({$qty}개)</li>
+                            <li><span>{$product_name}</span>{$option_str} ({$qty}개)</li>
+                        </ul>
+                        <ul class="price">
+                            <li id="{$product_price_div_id}" class="{$discount}">
+                                <p>{$product_price_front_head}{$product_price_front}<span>{$product_price_front_tail}</span></p>
+                            </li>
+                            <li id="{$product_sale_price_div_id}" class="{$product_sale_price_display|display}">
+                                <p><span id="{$product_sale_price_front_id}">{$product_sale_price_front}</span></p>
+                            </li>
+                        </ul>
+                        <p class="quantity">수량 {$product_quantity_text}개</p>
+                    </div>
+                    <div class="a3">
+                        <p class="{$subscription_show_display|display}"><span>배송주기</span> <span>{$subscription_option_str}</span></p>
+                        <p class="{$allotment_display|display}">무이자할부 상품</p>
+                        <p class="{$expiration_date_display|display}">유효기간 : {$expiration_date}</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="a1">
+                    <a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+                </div>
+                <div class="right">
+                    <div class="a2">
+                        <p class="name">{$product_name_link}</p>
+                        <ul class="option">
+                            <li>
+                                <span class="{$option_display|display}">{$option_str}</span>
+                            </li>
+                        </ul>
+                        <ul module="Myshop_optionSet">
+                            <li><span>{$product_name}</span>{$option_str} ({$qty}개)</li>
+                            <li><span>{$product_name}</span>{$option_str} ({$qty}개)</li>
+                        </ul>
+                        <ul class="price">
+                            <li id="{$product_price_div_id}" class="{$discount}">
+                                <p>{$product_price_front_head}{$product_price_front}<span>{$product_price_front_tail}</span></p>
+                            </li>
+                            <li id="{$product_sale_price_div_id}" class="{$product_sale_price_display|display}">
+                                <p><span id="{$product_sale_price_front_id}">{$product_sale_price_front}</span></p>
+                            </li>
+                        </ul>
+                        <p class="quantity">수량 {$product_quantity_text}개</p>
+                    </div>
+                    <div class="a3">
+                        <p class="{$subscription_show_display|display}"><span>배송주기</span> <span>{$subscription_option_str}</span></p>
+                        <p class="{$allotment_display|display}">무이자할부 상품</p>
+                        <p class="{$expiration_date_display|display}">유효기간 : {$expiration_date}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <!-- //해외 기본배송 -->
+    </div>
+    <!-- //해외배송상품 주문내역 -->
+
+    <!-- 주문자 정보 -->
+    <div class="orderArea {$use_order_form_display|display} {$order_form_orderer_class}">
+        <div class="title">
+            <p>주문자 정보</p>
+        </div>
+
+        <!-- 국내 쇼핑몰 -->
+        <div class="{$address_form} {$address_korean_display|display}">
+            <div class="form-block t1">
+                <p>주문자</p>
+                <div>{$form.oname}</div>
+            </div>
+            <div class="form-block t2 {$use_order_address_display|display}">
+                <p>주소</p>
+                <div>{$form.orderer_address}</div>
+            </div>
+            <div class="form-block t3 {$use_order_tel_display|display}">
+                <p>일반전화</p>
+                <div>{$form.ophone1_}</div>
+            </div>
+            <div class="form-block t4 {$use_order_cell_display|display}">
+                <p>휴대전화</p>
+                <div>{$form.ophone2_}</div>
+            </div>
+            <div class="form-block t5">
+                <p>이메일</p>
+                <div>{$form.oemail}</div>
+            </div>
+        </div>
+
+        <!-- 비회원 결제 -->
+        <div class="{$nm_display|display}">
+            <div class="form-block t6">
+                <p>주문조회 비밀번호</p>
+                <div>
+                    {$form.order_password}
+                    <div class="desc"><span id="{$order_form_nomember_password_alert_id}"></span><span id="{$order_form_nomember_password_message_id}"> (영문대소문자/숫자/특수문자 중 2가지 이상 조합, 6자~16자)</span></div>
+                </div>
+            </div>
+            <div class="form-block t7">
+                <p>주문조회 비밀번호 확인</p>
+                <div>
+                    {$form.order_password_confirm}
+                    <div class="desc"><span id="{$order_form_nomember_password_confirm_alert_id}"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 배송 정보 -->
+    <div class="order-deli-info">
+        <div class="title">
+            <p>배송 정보</p>
+            <button type="button" id="ec-shippingInfo-showRecentAddressList">배송지 목록</button>
+        </div>
+        <!-- 국내 배송지 정보 -->
+        <div class="{$r_info_display|display}">
+            <div class="form-block t8 {$sameaddr_display|display}">
+                <div>
+                    {$form.sameaddr}
+                    <span class="recent {$recent_delivery_class} {$recent_delivery_info_display|display}">
+                        <span>최근 배송지</span>
+                        {$form.recent_delivery_info}
+                    </span>
+                </div>
+            </div>
+            <div id="ec-shippingInfo-recentAddressList" class="form-block t8-1" style="display: none">
+                <p>배송지를 선택해 주세요.</p>
+                <button type="button" id="ec-shippingInfo-closeRecentAddressList">
+                    <i class="xi-close"></i>
+                </button>
+                <ul>
+                    <li module="Order_DeliveryList">
+                        <div class="a1"><input type="radio" id="ec-shippingInfo-recentAddressList-choice-select-{$ma_idx}" name="ec-shippingInfo-recentAddressList-choice" value="{$ma_idx}" {$ma_rcv_checked} /></div>
+                        <div class="a2">
+                            <p><span>{$ma_main_label}</span> {$ma_rcv_name}</p>
+                            <span class="ec-shippingInfo-recentAddressList-zipcode-{$ma_idx} zipcode">({$ma_rcv_zipcode})</span><br />
+                            <span class="ec-shippingInfo-recentAddressList-addr1-{$ma_idx}">{$ma_rcv_addr1}</span><span class="ec-shippingInfo-recentAddressList-addr2-{$ma_idx}">{$ma_rcv_addr2}</span>
+
+                            <div class="phone"><span>{$ma_rcv_mobile_no}</span> <span>{$ma_rcv_phone}</span></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="form-block t9">
+                <p>받는 사람</p>
+                <div>{$form.rname}</div>
+            </div>
+            <div class="form-block t10">
+                <p>배송지</p>
+                <div>{$form.receiver_address}</div>
+            </div>
+            <div class="form-block t11 {$use_delivery_tel_display|display}">
+                <p>일반전화</p>
+                <div>{$form.rphone1_}</div>
+            </div>
+            <div class="form-block t12 {$use_delivery_cell_display|display}">
+                <p>휴대전화</p>
+                <div>{$form.rphone2_}</div>
+            </div>
+            <div class="form-block t13 {$use_safe_phone_display|display}">
+                <p>안심번호</p>
+                <div>
+                    {$form.use_safe_phone}
+                    <div class="desc"><span>안심번호 서비스는 개인정보 보호를 위하여 휴대폰번호 등 실제 연락처 대신에 1회성 임시 번호를 제공하는 서비스입니다.</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 비회원 결제 -->
+        <div class="{$nm_display|display} {$order_form_delivery_simple_nomember_class}">
+            <div class="form-block t14">
+                <p>주문조회 비밀번호</p>
+                <div>
+                    {$form.order_password}
+                    <div class="desc"><span id="{$order_form_nomember_password_alert_id}"></span><span id="{$order_form_nomember_password_message_id}">(영문대소문자/숫자/특수문자 중 2가지 이상 조합, 6자~16자)</span></div>
+                </div>
+            </div>
+            <div class="form-block t15">
+                <p>주문조회 비밀번호 확인</p>
+                <div>
+                    {$form.order_password_confirm}
+                    <div class="desc"><span id="{$order_form_nomember_password_confirm_alert_id}"></span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="{$order_form_delivery_simple_class}">
+            <div class="form-block t15-1">
+                <p>이메일</p>
+                <div>
+                    <div>{$form.oemail}</div>
+                </div>
+                <p class="tooltip">이메일을 통해 주문처리과정을 보내드립니다.<br />이메일 주소란에는 반드시 수신가능한 이메일주소를 입력해 주세요.</p>
+            </div>
+        </div>
+
+        <!-- 국내 배송관련 정보 -->
+        <div class="{$r_info_display|display}">
+            <div class="form-block t16 {$r_info_display|display}">
+                <p>요청사항</p>
+                <div>{$form.omessage_select}</div>
+                <div class="ec-shippingInfo-omessageInput" style="display: none">
+                    {$form.omessage}
+                    <div class="{$omessage_autosave_display|display}">
+                        <label>{$form.omessage_autosave}{$omessage_autosave_board} 자동저장</label>
+                        <ul>
+                            <li>배송메시지란에는 배송시 참고할 사항이 있으면 적어주십시오.</li>
+                            <li>게시글은 비밀글로 저장되며 비밀번호는 주문번호 뒷자리로 자동 저장됩니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="form-block t17 {$hope_shipping_display|display}">
+                <p>희망 배송일</p>
+                <ul>
+                    <li>{$form.hope_shipping_fast}</li>
+                    <li>{$hope_start_day} 이후 날짜를 입력해야 합니다.</li>
+                    <li>
+                        {$form.hdateY}년 {$form.hdateM}월 {$form.hdateD}일
+                        <span id="{$fhdateW_str}">{$hope_date_str}</span>요일
+                    </li>
+                </ul>
+            </div>
+            <div class="form-block t18 {$hope_shipping_time_display|display}">
+                <p>희망배송시간</p>
+                <ul>
+                    <li>{$form.hope_shipping_time_fast}</li>
+                    <li>{$form.ship_hope_time}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 정기배송 정보 -->
+    <div class="{$subscription_show_display|display}">
+        <div class="title">
+            <p>정기배송 정보</p>
+        </div>
+        <div>
+            <div class="form-block t19">
+                <p>배송 시작일</p>
+                <div>
+                    {$form.subscription_start_date}
+                    <div class="desc"><span>(결제일 : 주기별 배송시작일의 1일 전)</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 추가 정보 -->
+    <div class="{$ordadd.display|display}">
+        <div class="title">
+            <p>추가 정보</p>
+        </div>
+        <div module="Order_ordadd">
+            <div class="form-block t20">
+                <p>{$subject}</p>
+                <div>{$html}{$content}</div>
+            </div>
+            <div class="form-block t21">
+                <p>{$subject}</p>
+                <div>{$html}{$content}</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기타 문의 사항 -->
+    <div class="{$question_display|display}">
+        <div class="title">
+            <p>기타 문의사항</p>
+        </div>
+        <div>
+            <div class="form-block t22">
+                <p>기타 문의사항</p>
+                <div>{$form.question}</div>
+            </div>
+            <div class="form-block t23">
+                <p>비밀번호</p>
+                <div>
+                    {$form.question_passwd}
+                    <div class="desc"><span class="{$question_passwd_help_display|display}">(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자)</span></div>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    해당 문의 사항은
+                    <a href="/board/product/list.html?board_no={$question_board_no}" target="_blank"><span>[{$question_board_name}]</span></a>
+                    에 자동 등록됩니다.
+                </li>
+                <li>운영자에 문의할 내용이나 요청할 내용이 있는 경우 기재하여 주세요.</li>
+                <li>비밀번호는 작성하신 문의글을 게시판에서 내용 확인 할 때 사용됩니다.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="{$agreement_display|display}">
+        <div class="form-block t24 {$all_agreement_checkbox_display|display}">
+            <div>{$form.all_agreement_checkbox}</div>
+        </div>
+        <div class="inner t24-1">
+            <div class="{$nm_display|display}">
+                <p>쇼핑몰 이용약관</p>
+                <div>{$form.mall_agreement}{$form.mall_agreement_checkbox}</div>
+            </div>
+            <div class="{$nm_display|display}" id="ec-orderform-NoMemberAgreementRow">
+                <p>비회원 구매 시 개인정보수집 이용동의</p>
+                <div>{$form.nm_terms}{$form.no_member_agreement_checkbox}</div>
+            </div>
+            <div class="{$privacy_agreement_display|display}" id="ec-orderform-PrivacyAgreementRow">
+                <p>개인정보수집 이용동의</p>
+                <div>{$form.privacy_agreement}{$form.privacy_agreement_checkbox}</div>
+            </div>
+            <div class="{$delivery_info_offer_display|display}">
+                <p>배송정보 제공방침</p>
+                <div>{$form.delivery_info_offer_content}{$form.delivery_info_checkbox}</div>
+            </div>
+            <div id="{$privacy_agreement_for_identification}" class="{$receiver_id_card_key_display|display}">
+                <p>고유식별정보수집 동의</p>
+                <div>{$form.privacy_agreement_for_identification}{$form.privacy_agreement_for_identification_checkbox}</div>
+            </div>
+            <div class="{$subscription_show_display|display}">
+                <p>정기결제 서비스 이용 동의</p>
+                <div>{$form.subscription_info_content}{$form.subscription_info_checkbox}</div>
+            </div>
+            <div class="{$nm_display|display} {$information_agreement_display|display}" id="ec-orderform-informationAgreementRow">
+                <p>개인정보 제3자 제공 동의 (선택)</p>
+                <div>{$form.information_agreement}{$form.information_agreement_checkbox}</div>
+            </div>
+            <div class="{$nm_display|display} {$consignment_agreement_display|display}" id="ec-orderform-ConsignmentAgreementRow">
+                <p>개인정보취급 위탁 동의 (선택)</p>
+                <div>{$form.consignment_agreement}{$form.consignment_agreement_checkbox}</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="{$gift_orderform_id}">
+        <!--@import(/order/ec_orderform/gift.html)-->
+    </div>
+
+    <!-- 할인/부가결제 -->
+    <div>
+        <div class="title">
+            <p>할인/부가결제</p>
+        </div>
+        <!-- 쿠폰할인 -->
+        <div class="{$total_addsale_summary_display|display}">
+            <div class="form-block t25 {$coupon_display|display} {$coupon_select_class}">
+                <p>쿠폰할인</p>
+                <div>
+                    <a href="#none" id="{$btn_coupon_select}">쿠폰적용</a>
+                </div>
+            </div>
+            <div class="form-block t26 {$discountcode_display|display} {$discountcode_select_class}">
+                <p>할인코드<br />적용</p>
+                <div><input type="text" name="ec_discountcode" /> <a href="#none" id="ec_discountcode">적용</a></div>
+            </div>
+            <div class="form-block t27 {$coupon_modify_class}">
+                <p>쿠폰할인</p>
+                <div>
+                    <span class="{$coupon_total_discount_price_class}">{$price_unit_head}0{$price_unit_tail}</span>
+                    <a id="{$coupon_modify_btn_id}" href="#none">수정</a>
+                    <div id="{$coupon_template_view_id}" style="display: none">
+                        <span id="{$coupon_template_contents_id}"></span>
+                        <span id="{$coupon_template_price_id}"></span>
+                        <span id="{$coupon_template_attr_D_id}"></span>
+                        <span id="{$coupon_template_attr_M_id}"></span>
+                        <span id="{$coupon_template_attr_C_id}"></span>
+                    </div>
+                    <div id="{$coupon_use_list_id}" style="display: none"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 적립금 -->
+        <div class="{$total_addpay_summary_display|display}">
+            <div class="form-block t28 {$mileage_display|display}" id="{$mileage_use_area_id}">
+                <div>
+                    <p>{$mileage_name}</p>
+                    <div>
+                        <div>
+                            <input type="hidden" name="ori_total_avail_mileage" id="ori_total_avail_mileage" value="{$ori_total_avail_mileage}" />
+                            {$form.input_mile}
+                            <button type="button" class="btnNormal" id="all_use_mileage">전액 사용</button>
+                        </div>
+                        <p>사용가능 <span>{$mileage_unit_head}{$total_avail_mileage}{$mileage_unit_tail}</span></p>
+                    </div>
+                </div>
+
+                <div>
+                    <span id="{$mileage_max_limit_id}" class="toggle-btn {$mileage_max_limit_display|display}"> 1회 구매시 {$mileage_name} 최대 사용금액은 {$mileage_max}입니다. </span>
+                    <ul>
+                        <li>{$mileage_name}은 최소 {$mileage_min} 이상일 때 결제가 가능합니다.</li>
+                        <li id="{$mileage_max_unlimit_id}" class="{$mileage_max_unlimit_display|display}">최대 사용금액은 제한이 없습니다.</li>
+
+                        <li>{$mileage_name}으로만 결제할 경우, 결제금액이 0으로 보여지는 것은 정상이며 [결제하기] 버튼을 누르면 주문이 완료됩니다.</li>
+                        <li id="{$mileage_shipfee_id}" class="{$mileage_shipfee_display|display}">{$mileage_name} 사용 시 배송비는 {$mileage_name}으로 사용 할 수 없습니다.</li>
+                        <li id="{$mileage_exception_id}" class="{$mileage_exception_display|display}">{$mileage_name} 사용 시 해당 상품에 대한 {$mileage_name}은 적립되지 않습니다.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="form-block t29 {$deposit_display|display}">
+                <div>
+                    <p>{$deposit_name}</p>
+                    <div>
+                        <div>
+                            <input type="hidden" name="ori_total_deposit" id="ori_total_deposit" value="{$ori_total_deposit}" />
+                            {$form.input_deposit}
+                            <button type="button" class="btnNormal" id="all_use_deposit">전액 사용</button>
+                        </div>
+                        <p>사용가능 <span>{$price_unit_head}{$total_deposit}</span></p>
+                    </div>
+                </div>
+                <div>
+                    <span id="{$mileage_max_limit_id}" class="toggle-btn"> {$deposit_name}은 사용제한 없이 언제든 결제가 가능합니다. </span>
+                    <ul>
+                        <li>{$deposit_name}으로만 결제할 경우, 결제금액이 0으로 보여지는 것은 정상이며 [결제하기] 버튼을 누르면 주문이 완료됩니다.</li>
+                        <li>현금환불요청 {$deposit_name}이 있을 경우, 현금환불요청 {$deposit_name}을 차감한 금액만 사용할 수 있으며, {$deposit_name} 환불요청을 취소하시면 전액 사용 가능합니다.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="form-block t52">
+                <p>적용금액</p>
+                <div>
+                    <div>
+                        <strong>-{$total_sale_price_front_head}<span id="{$total_sale_price_front_id}">{$total_sale_price_front}</span></strong
+                        >{$total_sale_price_front_tail}
+
+                        <span class="refer {$total_sale_ref_display|display}">({$total_sale_price_back_head}<span id="{$total_sale_price_back_id}">{$total_sale_price_back}</span>{$total_sale_price_back_tail})</span>
+                    </div>
+                    <span class="displaynone" id="{$total_addpay_price_id}">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 결제 수단 -->
+    <div class="pay-info">
+        <div class="title toggle-btn">
+            <p>결제방식</p>
+            <!-- <span class="{$payment_save_paymethod_display|display}"> {$payment_save_paymethod_checkbox}<label for="{$payment_save_paymethod_id}">{$payment_save_paymethod_text}</label> </span> -->
+        </div>
+
+        <div class="payment toggle-area">
+            <div class="method">{$form.addr_paymethod}</div>
+            <!-- 카드사 직접 결제 -->
+            <div class="card">{$directpay_card_form} {$directpay_card_agree}</div>
+
+            <div>
+                <!-- 무통장 입금 -->
+                <div id="{$payment_input_cash}" style="display: none">
+                    <div class="form-block t30">
+                        <p>입금자명</p>
+                        <div>{$form.pname}</div>
+                    </div>
+                    <div class="form-block t31">
+                        <p>입금은행</p>
+                        <div>{$form.bankaccount}</div>
+                    </div>
+                </div>
+
+                <!-- 실시간 계좌이체 -->
+                <div id="{$payment_input_tcash}" style="display: none">
+                    <div class="form-block t32">
+                        <p>예금주명</p>
+                        <div>{$form.allat_account_nm}</div>
+                    </div>
+                </div>
+
+                <!-- 에스크로(가상계좌) -->
+                <div id="{$payment_input_icash}" style="display: none">
+                    <div class="form-block t33">
+                        <p>에스크로</p>
+                        <div>
+                            {$form.flagEscrowIcashUse}
+                            <div class="desc"><label for="flagEscrowIcashUse0">에스크로(구매안전)서비스를 적용합니다.</label></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 무통장입금, 카드결제, 휴대폰결제, 실시간계좌이체 -->
+                <div id="{$pg_paymethod_info}">
+                    <p id="{$pg_paymethod_info_shipfee}">최소 결제 가능 금액은 결제금액에서 배송비를 제외한 금액입니다.</p>
+                    <p id="{$pg_paymethod_info_pg}">소액 결제의 경우 PG사 정책에 따라 결제 금액 제한이 있을 수 있습니다.</p>
+                </div>
+
+                <!-- 케이페이 -->
+                <div id="{$kpay_info}">
+                    <p>휴대폰에 설치된 케이페이 앱에서 비밀번호 입력만으로 빠르고 안전하게 결제가 가능한 서비스 입니다.</p>
+                    <p>
+                        안드로이드의 경우 구글 플레이, 아이폰의 경우 앱 스토어에서 케이페이 앱을 설치 한 후,<br />
+                        최초 1회 카드정보를 등록하셔야 사용 가능합니다.
+                    </p>
+                </div>
+
+                <!-- 페이나우 -->
+                <div id="{$paynow_info}">
+                    <p>휴대폰에 설치된 페이나우 앱에서 비밀번호 입력만으로 빠르고 안전하게 결제가 가능한 서비스 입니다.</p>
+                    <p>
+                        안드로이드의 경우 구글 플레이, 아이폰의 경우 앱 스토어에서 페이나우 앱을 설치 한 후,<br />
+                        최초 1회 카드 및 계좌 정보를 등록하셔야 사용 가능합니다
+                    </p>
+                </div>
+
+                <!-- 페이코 -->
+                <div id="{$payco_info}">
+                    <p>페이코 결제 팝업창에서 비밀번호 입력만으로 빠르고 안전하게 결제가 가능한 서비스 입니다.</p>
+                    <p><a href="//www.payco.com" target="_blank">www.payco.com</a> 에 회원가입 후, 최초 1회 카드 및 계좌 정보를 등록하셔야 사용 가능합니다.</p>
+                </div>
+
+                <!-- 카카오페이 -->
+                <div id="{$kakaopay_info}">
+                    <p>휴대폰에 설치된 카카오톡 앱에서 비밀번호 입력만으로 빠르고 안전하게 결제가 가능한 서비스 입니다.</p>
+                    <p>
+                        안드로이드의 경우 구글 플레이, 아이폰의 경우 앱 스토어에서 카카오톡 앱을 설치 한 후,<br />
+                        최초 1회 카드 및 계좌 정보를 등록하셔야 사용 가능합니다.
+                    </p>
+                    <p>인터넷 익스플로러의 경우 8 이상에서만 결제 가능합니다.</p>
+                    <p>카카오머니로 결제 시, 현금영수증 발급은 ㈜카카오페이에서 발급가능합니다.</p>
+                </div>
+
+                <!-- 스마일페이 -->
+                <div id="{$smilepay_info}">
+                    <p>앱 설치없이 회원가입 또는 G마켓/옥션/G9 ID 로그인 후 바로 이용 가능합니다.</p>
+                    <p>최초 1회 카드 정보를 등록하셔야 사용 가능합니다.</p>
+                    <p>결제시 스마일캐시 0.5% 자동적립되며(최대5천원), 스마일캐시는 스마일페이 전 가맹점에서 적립과 사용이 가능합니다.</p>
+                </div>
+
+                <!-- 엑심베이 신용카드 -->
+                <div id="{$eximbay_card_info}">
+                    <p>4개 카드사(VISA, MasterCard, JCB, BC)를 이용할 수 있습니다.</p>
+                    <p>USD, JPY, EUR, GBP 등 세계 주요 23개국 통화를 지원합니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 증명서류 발급 -->
+        <div class="agree">
+            <!-- 현금 영수증 -->
+            <div class="{$cashreceipt_display|display}" id="{$cashreceipt_display_area}">
+                <div>{$form.cashreceipt_regist}</div>
+                <div id="{$cashreceipt_form_area}" class="cash">
+                    <div class="form-block t34">
+                        <p>구분</p>
+                        <div>{$form.cashreceipt_user_type2}</div>
+                    </div>
+                    <div class="form-block t35 mobile" id="{$cashreceipt_mobile_display_area}">
+                        <p>핸드폰 번호</p>
+                        <div>{$form.cashreceipt_user_mobile}</div>
+                    </div>
+                    <div class="form-block t36 regno" id="{$cashreceipt_regno_display_area}">
+                        <p>사업자 번호</p>
+                        <div>{$form.cashreceipt_reg_no}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 청약철회방침 -->
+            <div class="{$subscription_display|display}">
+                <div class="form-block t47">
+                    <p>청약철회방침</p>
+                    <div>
+                        {$form.subscription_terms}
+                        <a href="#none" onclick="{$subscription_script}" class="btnAgree">전체보기</a>
+                        <p>
+                            {$form.subscription_agreement_chk}<label for="subscription_agreement_chk0"><span>동의함</span></label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 전자보증보험-->
+            <div class="{$eguarantee_display|display}">
+                <div class="form-block t48">
+                    <p>전자보증보험</p>
+                    <div>
+                        <div>
+                            <p>전자보증보험 발급 여부 : {$form.eguarantee_flag}</p>
+                            <p>
+                                전자보증보험 안내(100% 매매보호 안전결제)
+                                <a href="/common/usafe_notice.php" target="_blank" onclick="window.open(this.href,'new','height=500 width=550 toolbar=no location=no directory=no status=no resizable=no'); return false;">[자세히보기]</a>
+                            </p>
+                            <p>물품대금결제시 구매자의 피해보호를 위해 '(주)서울보증보험'의 보증보험증권이 발급됩니다.</p>
+                            <p>증권이 발급되는 것의 의미는, 물품대금 결제시에 소비자에게 서울보증보험의 쇼핑몰보증보험 계약체결서를 인터넷상으로 자동 발급하여, 피해발생시 쇼핑몰보증보험으로써 완벽하게 보호받을 수 있습니다.</p>
+                            <p>또한, 입력하신 개인정보는 증권발급을 위해 필요한 정보이며 다른 용도로 사용되지 않습니다.</p>
+                            <p>전자보증보험 발생시 별도의 수수료가 부과되지 않습니다.</p>
+                        </div>
+                        <div id="{$eguarantee_personal_id}">
+                            <p>생년월일 : {$form.eguarantee_year} 년 {$form.eguarantee_month} 월 {$form.eguarantee_day} 일</p>
+                            <p>성별 : {$form.eguarantee_user_gender}</p>
+                            <p>개인정보 이용동의 : {$form.eguarantee_personal_agreement}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daum 비회원 구매 동의 -->
+            <div class="{$daum_agreement_display|display}">
+                <div class="form-block t49">
+                    <p>Daum 비회원 구매 쇼핑정보 제공동의</p>
+                    <div>
+                        {$form.daum_terms}
+                        <a href="#none" onclick="{$daum_agreement_script}" class="btnAgree">전체보기</a>
+                        <p>
+                            {$form.daum_agreement_chk}<label for="daum_agreement_chk0"><span>동의함</span></label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 결제 정보 -->
+    <div class="total-info">
+        <ul>
+            <li>
+                <p>상품금액</p>
+                <span>{$price_unit_head}{$total_product_base_price}{$price_unit_tail}</span>
+            </li>
+            <div class="{$total_vat_price_display|display}">
+                <p>부가세</p>
+                <span>{$price_unit_head}{$total_vat_price}{$price_unit_tail}</span>
+            </div>
+            <li>
+                <p>배송비</p>
+                <span id="{$total_ship_price_id}">{$price_unit_head}{$total_ship_price}{$price_unit_tail}</span>
+            </li>
+            <li>
+                <p>지역별 배송비</p>
+                <span id="{$total_local_ship_price_id}">{$price_unit_head}0{$price_unit_tail}</span>
+            </li>
+            <li>
+                <p>총 할인 금액</p>
+                <span>-{$price_unit_head}<strong id="{$payment_total_sale_price_id}">{$total_sale_price_front}</strong>{$price_unit_tail}</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 최종 결제 금액 -->
+    <div class="total">
+        <div>
+            <p>총 결제금액</p>
+            <span>{$price_unit_head}{$form.total_price}{$price_unit_tail}</span>
+        </div>
+        <a href="#none" id="{$btn_payment_id}">
+            <strong class="{$subscription_hide_display|display}">결제하기</strong>
+            <strong class="{$subscription_show_display|display}">정기배송 신청하기</strong>
+        </a>
+    </div>
+
+    <!-- 안심번호 팝업 레이어 -->
+    <div id="{$safe_phone_popup_layer}"></div>
+
+    <!--@import(/order/order_confirm_layer.html)-->
+
+    <!-- 결제진행바 -->
+    <iframe id="{$payment_proc_id}" name="h_payment" width="0" height="0" frameborder="0" src=""></iframe>
+    <!-- // 결제진행바 -->
+</div>
+
+<style>
+    #container {
+        margin: 0;
+    }
+</style>
+
+<script>
+    jq(() => {
+        // 토글 없애기
+        // 폴더
+        jq(".xans-order-form .form-block.t28 > div:nth-of-type(2) .toggle-btn").on("click", function () {
+            jq(this).toggleClass("on");
+            jq(this).parent().find("> ul").stop().slideToggle();
+        });
+        jq(".xans-order-form .form-block.t29 > div:nth-of-type(2) .toggle-btn").on("click", function () {
+            jq(this).toggleClass("on");
+            jq(this).parent().find("> ul").stop().slideToggle();
+        });
+        jq(".xans-order-form .title.toggle-btn").on("click", function () {
+            jq(this).toggleClass("on");
+            jq(this).parent().find(".toggle-area").stop().slideToggle();
+        });
+
+        // 결제 tab
+        jq(".xans-order-form .payment .method > div > span:nth-child(1)").addClass("on");
+        jq(".xans-order-form .payment .method > div > span").on("click", function () {
+            jq(this).addClass("on").siblings().removeClass("on");
+        });
+
+        // 마일리지 예치금 전액사용
+        jq("#all_use_mileage, #all_use_deposit")
+            .off()
+            .on("click", function () {
+                var id = jq(this).attr("id");
+                var total_mileage = parseInt(CAFE24.SHOP_FRONT_ORDERFORM_DATA.mileage.fMaxMileage);
+                var total_deposit = parseInt(CAFE24.SHOP_FRONT_ORDERFORM_DATA.deposit.fMaxDeposit);
+                if (id == "all_use_mileage") {
+                    jq("#input_mile").val(total_mileage);
+                    jq("#input_mile").trigger("focus");
+                    jq("#input_mile").trigger("blur");
+                } else {
+                    jq("#input_deposit").val(total_deposit);
+                    jq("#input_deposit").trigger("focus");
+                    jq("#input_deposit").trigger("blur");
+                }
+            });
+    });
+</script>

@@ -1,0 +1,145 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/myshop/src/myshop.css)-->
+<div class="titleArea">
+    <h2>취소 신청</h2>
+    <span module="Layout_MobileAction">
+        <a href="#none" onclick="{$go_back}"><img src="//img.echosting.cafe24.com/skin/mobile_ko_KR/layout/btn_back.gif" width="33" alt="뒤로가기" /></a>
+    </span>
+</div>
+<div module="Myshop_OrderHistoryApplyCancel" class="cancel-wr">
+    <!-- @css(/css/module/myshop/orderHistoryApplyCancel.css)-->
+
+    <div class="prd-info">
+        <div class="title toggle-btn on">
+            <h3>주문 상품 정보</h3>
+        </div>
+        <div>
+            <div class="order-top">
+                <strong class="date" title="주문일자">{$order_date_ymd}</strong>
+                <span class="number" title="주문번호">[{$order_id}]</span>
+            </div>
+            <div class="contents">
+                <div module="Myshop_products">
+                    <div class="orderList">
+                        <div class="order-prd">
+                            <span class="chk">{$form.checkbox}</span>
+                            <div class="a1">
+                                <a href="/product/detail.html{$param_product}">
+                                    <img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" />
+                                </a>
+                            </div>
+                            <div class="right">
+                                <div class="a2">
+                                    <p class="name">{$product_name_link}</p>
+                                    <div class="option {$option_display|display}">
+                                        <div>{$option_str}</div>
+                                        <ul module="Myshop_optionSet">
+                                            <li><strong>{$product_name}</strong>{$option_str} ({$qty}개)</li>
+                                            <li><strong>{$product_name}</strong>{$option_str} ({$qty}개)</li>
+                                        </ul>
+                                    </div>
+                                    <div class="price">
+                                        {$item_price_raw_front_head}<strong>{$item_price_raw_front}</strong>{$item_price_raw_front_tail}
+                                        <span class="{$item_price_ref_display|display}"> {$item_price_raw_back_head}{$item_price_raw_back}{$item_price_raw_back_tail}</span>
+                                        <span class="free {$card_installment_display|display}">무이자할부 상품</span>
+                                    </div>
+                                    <p class="quantity" title="수량">수량 {$quantity}개</p>
+                                </div>
+                                <div class="a3">
+                                    <div>
+                                        <a href="javascript:;" class="up" onclick="{$add_shortcut}">
+                                            <img src="//img.echosting.cafe24.com/skin/base/common/btn_quantity_up.gif" alt="수량증가" class="up" />
+                                        </a>
+                                        {$form.quantity}
+                                        <a href="javascript:;" class="down" onclick="{$out_shortcut}">
+                                            <img src="//img.echosting.cafe24.com/skin/base/common/btn_quantity_down.gif" alt="수량감소" class="down" />
+                                        </a>
+                                    </div>
+                                    <a class="btnBasic" href="javascript:;" onclick="{$action_modify}">변경</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="a4">
+                            <div class="status">{$cur_state}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="boardViewCS">
+            <div class="title">
+                <h3>취소 사유</h3>
+            </div>
+            <div>
+                <div class="info-block t1">
+                    <p>사유선택</p>
+                    <div>
+                        {$form.reason_select}
+                        <span id="{$cs_shipfee_paid_by_id}" class="{$cs_shipfee_paid_by_display|display}">[교환배송비 <span id="{$cs_shipfee_paid_by_who_id}" class="txtEm"></span> 부담]</span>
+                    </div>
+                </div>
+                <div class="info-block t2">
+                    <p>상세사유</p>
+                    <div>{$form.reason_detail}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="boardViewCS {$cs_add_item_display|display}">
+            <div class="title">
+                <h3>추가정보</h3>
+            </div>
+            <div module="Myshop_Csadd">
+                <div class="info-block t3">
+                    <p>{$item_title}</p>
+                    <div>
+                        {$item_value}
+                        <p class="help">{$guide_content}</p>
+                    </div>
+                </div>
+                <div class="info-block t4">
+                    <p>{$item_title}</p>
+                    <div>
+                        {$item_value}
+                        <p class="help">{$guide_content}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pickup-detail boardViewCS {$refund_info_display|display}">
+            <div class="title">
+                <h3>환불정보</h3>
+            </div>
+            <div class="{$refund_notice_display|display}">
+                <div class="info-block t15">
+                    <p>환불예정금액</p>
+                    <div>환불예정금액은 판매자가 접수처리 완료 후 '주문상세조회'에서 확인할 수 있습니다.<br />교환상품에 따라 추가결제금액이 발생할 수 있습니다.</div>
+                </div>
+                <div class="info-block t16">
+                    <p>배송비 안내</p>
+                    <div>{$cs_info_desc}</div>
+                </div>
+            </div>
+            <div class="{$refund_account_display|display}">
+                <div class="info-block t17">
+                    <p>환불계좌</p>
+                    <div>
+                        <span id="{$id_acc_full_str}" class="{$acc_full_str_display|display}">{$acc_full_str}</span>
+                        <span id="{$id_acc_reg_disp}" class="{$acc_reg_display|display}"><a href="#none" class="btnBasic" onclick="OrderApply.popupAccount('./account.html');">환불계좌등록</a></span>
+                        <span id="{$id_acc_mod_disp}" class="{$acc_mod_display|display}"><a href="#none" class="btnBasic" onclick="OrderApply.popupAccount('./account.html');">환불계좌변경</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {$form.is_new_cs_form}
+
+    <div class="ec-base-button gColumn">
+        <a href="/myshop/order/list.html{$back_page_param}" class="btnEm">이전페이지</a>
+        <a href="#none" onclick="OrderApply.apply(); return false;" class="btnSubmit">취소신청</a>
+    </div>
+</div>

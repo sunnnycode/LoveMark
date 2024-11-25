@@ -1,0 +1,72 @@
+<div module="Product_BasketAdd">
+    <div class="header">
+        <h3>장바구니 담기</h3>
+    </div>
+    <div class="content">
+        <p>상품이 장바구니에 담겼습니다.</p>
+    </div>
+    <div class="ec-base-button">
+        <a href="/order/basket.html?delvtype={$delvtype}" class="btnSubmitFix sizeS">장바구니 이동</a>
+        <a href="#none" class="btnNormalFix sizeS" onclick="$('#confirmLayer').remove();" complete="complete">쇼핑계속하기</a>
+    </div>
+    <a class="close" onclick="$('#confirmLayer').remove();"><img src="//img.echosting.cafe24.com/skin/base/common/btn_close.gif" alt="닫기" /></a>
+</div>
+
+<style>
+    .xans-product-basketadd {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 99999;
+        width: 320px;
+        margin: -100px 0 0 -160px;
+        background: #fff;
+        border: 1px solid #000;
+        box-sizing: border-box;
+    }
+    .xans-product-basketadd::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+        top: 0;
+        left: 0;
+    }
+    .xans-product-basketadd .header {
+        display: none;
+    }
+    .xans-product-basketadd .content {
+        text-align: center;
+        padding: 50px 0;
+        font-size: 0.9375rem;
+        font-weight: 400;
+        background: #fff;
+    }
+    .xans-product-basketadd .content p {
+        font-weight: bold;
+        color: #2e2e2e;
+    }
+    .xans-product-basketadd .ec-base-button {
+        display: flex;
+    }
+    .xans-product-basketadd .ec-base-button a {
+        border: none;
+        background: #000;
+        color: #fff;
+        width: 50%;
+        font-size: 0.8125rem;
+        padding: 15px 0;
+        transition: none;
+        box-sizing: border-box;
+    }
+    .xans-product-basketadd .ec-base-button a:nth-child(1) {
+        background: #fff;
+        color: #000;
+        border-top: 1px solid #000;
+    }
+    .xans-product-basketadd .close {
+        display: none;
+    }
+</style>

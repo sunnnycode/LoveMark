@@ -1,0 +1,79 @@
+/* main */
+.main-wr > div{padding: 50px 0;}
+.main-wr > div .title_box {margin-bottom: 40px; border: #777; display: flex; justify-content: space-between; align-items: center;}
+.main-wr > div .title_box h1{display: block; margin-bottom: 5px; font-size: 18px;}
+.main-wr > div .title_box p{color: #777; font-size: 14px; font-family: 600;}
+.main-wr > div .ec-base-product{}
+.main-wr > div .ec-base-product{background: none;}
+
+.main-wr  .swiper-pagination-bullet-active {background-color: var(--point) !important;}
+.main-wr > div .more_btn {display: flex; width: 70px; height: 25px; justify-content: center; border-radius: 50px; align-items: center; gap: 5px;border: 1px solid #777; font-size: 12px; color: #777; }
+
+.main-wr .xans-product-listmain .prdList{display: flex !important; flex-wrap: wrap;}
+
+
+/*  main-slide : 메인 상단 슬라이드 배너 */
+.main-wr .main-slide{padding: 0;}
+.main-wr .main-slide .swiper-pagination {left: auto; right: 10px; width: 50px; height: 30px; line-height: 30px; border-radius: 50px; box-sizing: border-box;  background-color: rgba(0, 0, 0, 0.6); color: #fff; font-size: 12px; font-weight: bold;}
+.main-wr .main-slide .swiper-pagination .swiper-pagination-current {color: var(--point);}
+
+/*  main-product-01 : MD의 픽  */
+.main-product-01 {padding: 50px 20px !important; box-sizing: border-box;}
+
+/* main-product-02 : 브랜드 상품 */
+.main-product-02 {padding: 50px 20px !important; box-sizing: border-box;}
+.main-product-02 > div {}
+.main-product-02 > div > .flex-wr{width: 100%; display: flex; gap: 20px; margin-bottom: 20px;}
+.main-product-02 > div > .flex-wr:last-child {margin-bottom: 0;}
+.main-product-02 > div > .flex-wr .xans-product-listmain .prdList {flex-wrap: nowrap;}
+.main-product-02 > div > .flex-wr > div {width: calc(50%);}
+.main-product-02 > div > .flex-wr > div .title_box {display: block; margin-bottom: 20px; text-align: left;}
+.main-product-02 > div > .flex-wr > div .title_box h1{display: block; margin-bottom: 10px; font-size: 18px; overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
+.main-product-02 > div > .flex-wr > div .title_box p{color: #777; font-size: 14px; font-family: 600; overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
+.main-product-02 > div > .flex-wr .img-area {
+  width: calc(50% - 20px);
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+.main-product-02 > div > .flex-wr .ec-base-product {padding: 0; box-sizing: border-box; margin: 0;}
+.main-product-02 > div > .flex-wr .swiper-wrapper {height: auto;}
+.main-product-02 > div > .flex-wr .ec-base-product .prdList {}
+.main-product-02 .ec-base-product ul.grid2 li .description {width: 100%; padding: 0;}
+.main-product-02 .ec-base-product ul.grid2 li .thumbnail {width: 100%;}
+
+
+
+/* banner__slide : 중간 슬라이드 배너 */
+.banner__slide {}
+.banner__slide .swiper2 {position: relative; overflow: hidden; padding-bottom: 40px;}
+.banner__slide img{width: 100%; border-radius: 15px;}
+
+
+/* main-product-03 : 주간 BEST */
+.main-product-03 {padding: 50px 20px !important; box-sizing: border-box;}
+
+/* main-product-04 : 신규캠핑장 */ 
+.main-product-04 {padding: 50px 20px !important; box-sizing: border-box;}
+
+/* main-magazine : 캠핑 매거진 */
+.main-magazine {margin-bottom: 50px; padding: 50px 20px !important; box-sizing: border-box; overflow: hidden;}
+.main-magazine .magazineList {padding: 0 20px 40px; position: relative;}
+.main-magazine .magazineList .swiper-slide {position: relative; width: calc(100% / 3); aspect-ratio: 1/1; overflow: hidden;}
+.main-magazine .magazineList .swiper-slide a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+}
+.main-magazine .magazineList .swiper-slide .contents {position: absolute;left: 30px;bottom: 50px;}
+.main-magazine .magazineList .swiper-slide .contents p {color: #fff;  text-shadow: 2px 2px 2px #222;}
+.main-magazine .magazineList .swiper-slide .contents p:nth-child(1) {font-size: 18px; font-weight: 700; margin-bottom: 10px;}
+.main-magazine .magazineList .swiper-slide .contents p:nth-child(2) {font-size: 14px; font-weight: 500;}
+

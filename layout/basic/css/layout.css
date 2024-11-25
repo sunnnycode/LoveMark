@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+.cboth { clear:both;*zoom:1 }
+.cboth:after { content:" "; display:block; clear:both; }
+.fleft {float:left !important;}
+.fright {float:right !important;}
+
+.pdt5 {padding-top:5px;}
+.pdt10 {padding-top:10px;}
+.pdt15 {padding-top:15px;}
+.pdt20 {padding-top:20px !important;}
+.pdt30 {padding-top:30px !important;}
+.pdt40 {padding-top:40px;}
+.pdt50 {padding-top:40px;}
+.pdt100 {padding-top:100px;}
+.pdb4 {padding-bottom:4px;}
+.pdb5 {padding-bottom:5px;}
+.pdb10 {padding-bottom:10px;}
+.pdb20 {padding-bottom:20px;}
+.pdb30 {padding-bottom:30px;}
+.relative {position:relative;}
+.center {text-align:center;}
+
+/* 타이틀 */
+.titleArea { position:relative; border-bottom:0;}
+#titleArea { position:relative; border-bottom:0;}
+.titleArea h2 {line-height:35px; font-size:18px; color:#000; text-align:left;padding: 15px 0 0;box-sizing: border-box;font-weight: 500;margin: 0 0 15px;}
+#titleArea h2 {line-height:35px; font-size:18px; color:#000; text-align:left;padding: 15px 0 0;box-sizing: border-box;font-weight: 500;margin: 0 0 15px;}
+.titleArea span { position:absolute; top:50%;margin-top:-8px; left:15px;opacity:0;display: none;}
+#titleArea span { position:absolute; top:50%;margin-top:-8px; left:15px;opacity:0;display: none;}
+.titleArea .xans-layout-mobileaction a img {width:10px;}
+#titleArea .xans-layout-mobileaction a img {width:10px;}
+
+/* 더보기 */
+/* .ec-base-paginate.typeMoreview {margin-bottom:30px;}
+.ec-base-paginate.typeMoreview .btnMore { display:inline-block; padding:10px 30px; border:1px solid #c9c9c9; color:#222; font-weight:400; background:#fff; }
+.ec-base-paginate.typeMoreview .icoMore { display: inline-block; margin:-3px 0 0 5px; width:10px; height:10px; font-size:0px; line-height:0; vertical-align:middle; background:url("/images/customizing/btn_more.png") no-repeat 0 50%; background-size:10px 10px; } */
+
+@media all and (orientation:landscape) { 
+	.xans-product-listmain {margin:0 auto;width:95.5%;} 
+}
+
+#mobileQuickLink { z-index:301 !important; }
+#mobileBtnQuickLink { z-index:100 !important; }
+
+.dimmed { display:none; position:fixed; left:0px; top:0; right:0px; bottom:0px; z-index:150; background:rgba(0,0,0,0.7); }
+#dimmedSlider { display:none; position:fixed; left:0px; top:0; right:0px; bottom:0px; z-index:500; background:rgba(0,0,0,0.7); }
+
